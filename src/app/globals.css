@@ -2,21 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  background-image: linear-gradient(
-          75deg,
-          hsl(240deg 64% 9%) 0%,
-          hsl(240deg 63% 8%) 6%,
-          hsl(240deg 62% 8%) 17%,
-          hsl(240deg 61% 7%) 35%,
-          hsl(240deg 59% 7%) 60%,
-          hsl(240deg 58% 6%) 81%,
-          hsl(240deg 55% 6%) 92%,
-          hsl(240deg 52% 5%) 98%,
-          hsl(240deg 47% 5%) 100%,
-          hsl(240deg 37% 4%) 100%
-  );
-  width: 100dvw;
-  height: 100dvh;
+	background-image: linear-gradient(
+		75deg,
+		hsl(240deg 64% 9%) 0%,
+		hsl(240deg 63% 8%) 6%,
+		hsl(240deg 62% 8%) 17%,
+		hsl(240deg 61% 7%) 35%,
+		hsl(240deg 59% 7%) 60%,
+		hsl(240deg 58% 6%) 81%,
+		hsl(240deg 55% 6%) 92%,
+		hsl(240deg 52% 5%) 98%,
+		hsl(240deg 47% 5%) 100%,
+		hsl(240deg 37% 4%) 100%
+	);
+	width: 100dvw;
+	height: 100dvh;
+}
+
+.avatar-cont {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	@apply bg-primary;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
+	animation: animate-avatar-border 20s ease-in-out 0s infinite both;
+	overflow: hidden;
+}
+
+@keyframes animate-avatar-border {
+	0%,
+	100% {
+		border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
+	}
+
+  30% {
+    border-radius: 77% 23% 43% 57% / 80% 65% 35% 20% ;
+  }
+	50% {
+    border-radius: 63% 37% 68% 32% / 70% 38% 62% 30% ;
+	}
 }
