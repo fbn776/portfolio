@@ -2,7 +2,25 @@
 
 import { RefObject, useEffect } from "react";
 import Entity from "./Entity";
-import { randNumber } from "@/app/utils";
+import { generateEntity } from "./generateEntity";
+
+// export class Debug {
+// 	static rects: { x: number; y: number; w: number; h: number }[] = [];
+
+// 	static add(rect: typeof this.rects[0]) {
+// 		this.rects.push(rect);
+// 	}
+
+// 	static draw(ctx: CanvasRenderingContext2D) {
+// 		for (let rect of this.rects) {
+// 			ctx.beginPath();
+// 			ctx.strokeStyle = "green";
+// 			ctx.rect(rect.x, rect.y, rect.w, rect.h);
+// 			ctx.stroke();
+// 			ctx.closePath();
+// 		}
+// 	}
+// }
 
 export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 	useEffect(() => {
@@ -65,6 +83,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 
 				entity.update(dt);
 				entity.draw(ctx);
+				// Debug.draw(ctx);
 			}
 			lastTime = now;
 			drawID = requestAnimationFrame(draw);
@@ -77,35 +96,4 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			cancelAnimationFrame(drawID);
 		};
 	}, []);
-}
-
-function generateEntity(width: number, height: number, entityArr: Entity[]) {
-	const size = 100;
-	const leftExtreme = 100,
-		rightExtreme = width - 100,
-		topExtreme = 100,
-		bottomExtreme = height - 100;
-
-	const pos =
-		Math.random() > 0.5
-			? {
-					x: Math.random() > 0.5 ? leftExtreme : rightExtreme,
-					y: randNumber(topExtreme, bottomExtreme),
-			  }
-			: {
-					x: randNumber(leftExtreme, rightExtreme),
-					y: Math.random() > 0.5 ? topExtreme : bottomExtreme,
-			  };
-	const vel = {
-		x: Math.floor(randNumber(-10, 10)),
-		y: Math.floor(randNumber(-10, 10)),
-	};
-
-	entityArr.push(
-		new Entity({
-			pos,
-			vel,
-			size,
-		})
-	);
 }

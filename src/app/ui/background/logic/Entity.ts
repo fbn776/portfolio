@@ -1,5 +1,4 @@
-
-type Vec2D = {x: number, y: number};
+import { Vec2D } from "@/app/types";
 
 
 export default class Entity {
@@ -43,5 +42,18 @@ export default class Entity {
 	draw(ctx: CanvasRenderingContext2D) {
 		//ctx.fillRect(this.pos.x, this.pos.y, 20, 20);
 		ctx.drawImage(this.sprite, this.pos.x, this.pos.y, this.size, this.size);
+
+		ctx.beginPath()
+		ctx.save();
+			ctx.strokeStyle = "red";
+
+			ctx.translate(this.pos.x, this.pos.y);
+			ctx.stroke();
+			ctx.moveTo(0, 0);
+			ctx.lineTo(this.vel.x, this.vel.y);
+			ctx.stroke();
+
+		ctx.restore();
+		ctx.closePath()
 	}
 }
