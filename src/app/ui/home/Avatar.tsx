@@ -9,6 +9,8 @@ export default function AvatarSVG() {
 				height={400}
 				alt="Febin's avatar"
 				className="absolute bottom-0"
+				draggable={false}
+				priority={true}
 			/>
 		</div>
 	);

@@ -6,7 +6,8 @@ import { inter, teko } from "@/app/ui/fonts";
 import Image from "next/image";
 import AvatarSVG from "./Avatar";
 import { TypeAnimation } from "react-type-animation";
-export default function Header() {
+
+export default function HeroPage() {
 	return (
 		<>
 			<Navbar />
