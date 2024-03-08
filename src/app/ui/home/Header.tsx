@@ -15,30 +15,28 @@ export default function Header() {
 					className={`${inter.className} mt-10 text-white text-8xl leading-tight tracking-wide max-w-[60%]`}
 				>
 					<h1 className="mb-6">Hello;</h1>
-					<h1>
+					<div>
 						I&apos;m{" "}
 						<span className={clsx(teko.className, "text-primary text-9xl m-0")}>
 							Febin
 						</span>
-					</h1>
+					</div>
 
 					<TypeAnimation
 						sequence={[
-							"Student",
+							"> Student",
 							1000,
-							"Front End Dev",
+							"> Developer",
+							1000,
+							"> Full Stack Developer",
+							1000,
+							"> Aspiring Engineer",
 							2000,
-							"Full Stack",
-							1000,
-							"Web Dev",
-							1000,
-							"Aspiring Engineer",
-							1000,
 						]}
 						aria-label="I'm a student, front end dev, web dev, full stack, aspiring engineer"
 						speed={25}
 						repeat={Infinity}
-						className="text-7xl m-0"
+						className="text-3xl m-0"
 					/>
 				</div>
 				<AvatarSVG />
