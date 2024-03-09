@@ -1,6 +1,5 @@
 "use client";
 
-import clsx from "clsx";
 import { inter, teko } from "@/app/ui/fonts";
 import AvatarSVG from "./Avatar";
 import { TypeAnimation } from "react-type-animation";
