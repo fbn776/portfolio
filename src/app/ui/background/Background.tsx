@@ -12,7 +12,7 @@ function Background() {
 	return (
 		<>
 			<canvas
-				className="fixed inset-0 -z-50 opacity-50"
+				className="fixed inset-0 -z-50 opacity-20"
 				ref={canvasElm}
 			></canvas>
 		</>

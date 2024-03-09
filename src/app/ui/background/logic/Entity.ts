@@ -15,6 +15,8 @@ export default class Entity {
 	private lifeSpan: number = 10;
 	// Once age surpasses weakLife, the entity starts to fade.
 	private weakLife: number;
+	private scale;
+	private strongLife;
 
 	static sprites: HTMLImageElement[] = [];
 
@@ -36,7 +38,11 @@ export default class Entity {
 		this.angleVel = data.angleVel;
 		this.opacity = this.initialOpacity = data.startOpacity;
 
+		this.scale = 0;
+		// When the object should start to fade
 		this.weakLife = this.lifeSpan * 0.8;
+		// When the object should reach max scale
+		this.strongLife = this.lifeSpan * 0.1;
 	}
 
 	isDead() {
@@ -44,6 +50,11 @@ export default class Entity {
 	}
 
 	update(dt: number) {
+		this.scale =
+			this.age <= this.strongLife
+				? mapValue(this.age, 0, this.strongLife, 0, 1)
+				: 1;
+
 		if (this.age >= this.weakLife) {
 			this.opacity = mapValue(
 				this.age,
@@ -68,9 +79,9 @@ export default class Entity {
 
 		ctx.translate(this.pos.x, this.pos.y);
 		ctx.rotate(this.angle);
+		ctx.scale(this.scale, this.scale);
 		ctx.drawImage(this.sprite, -this.cs, -this.cs, this.size, this.size);
-		ctx.fillStyle = "red";
-		ctx.fillRect(0, 0, 10, 10);
+
 		ctx.globalAlpha = 1;
 		ctx.restore();
 		ctx.closePath();

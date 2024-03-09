@@ -25,7 +25,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			height = window.innerHeight;
 
 		const ctx = canvas.getContext("2d");
-		let entityArr: Entity[] = [];
+		const entityArr: Entity[] = [];
 
 		if (!ctx) return;
 
@@ -35,7 +35,6 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 		const resize = () => {
 			canvas.width = width = window.innerWidth;
 			canvas.height = height = window.innerHeight;
-			entityArr = [];
 		};
 
 		window.addEventListener("resize", resize);
@@ -45,8 +44,8 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 		 */
 		setTimeout(resize, 0);
 
-		for(let i = 0; i < 10; i++) {
-			console.log(width, height)
+		// Initially 
+		for(let i = 0; i < 4; i++) {
 			generateEntity(width, height, entityArr);
 		}
 
@@ -58,7 +57,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			const dt = (now - lastTime) / 1000.0;
 			ctx.clearRect(0, 0, width, height);
 
-			if (Math.random() < 0.1) generateEntity(width, height, entityArr);
+			if (Math.random() < 0.1 && entityArr.length < 20) generateEntity(width, height, entityArr);
 
 			for (let i = 0; i < entityArr.length; i++) {
 				const entity = entityArr[i];

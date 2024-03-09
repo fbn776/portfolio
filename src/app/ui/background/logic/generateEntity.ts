@@ -9,30 +9,10 @@ function getRandPosInRect(
 	topExtreme: number,
 	bottomExtreme: number
 ): Vec2D {
-	const side = Math.floor(randNumber(1, 4));
-	
-	switch(side) {
-		case 1:
-			return {
-				x: randNumber(leftExtreme, rightExtreme),
-				y: topExtreme
-			};
-		case 2:
-			return {
-				x: rightExtreme,
-				y: randNumber(topExtreme, bottomExtreme),
-			};
-		case 3:
-			return {
-				x: randNumber(leftExtreme, rightExtreme),
-				y: bottomExtreme
-			};
-		default:
-			return {
-				x: leftExtreme,
-				y: randNumber(topExtreme, bottomExtreme),
-			};
-	}
+	return {
+		x: randNumber(leftExtreme, rightExtreme),
+		y: randNumber(topExtreme, bottomExtreme),
+	};
 }
 
 export function generateEntity(
@@ -40,21 +20,19 @@ export function generateEntity(
 	height: number,
 	entityArr: Entity[]
 ) {
-	console.log(width, height);
-	
-	const minSize = 80;
+	const minSize = 150;
 	const maxSize = 400;
 
 	const size = Math.floor(randNumber(minSize, maxSize));
 	const startOpacity = mapValue(size, minSize, maxSize, 0.5, 1);
 	const angleVel = mapValue(size, minSize, maxSize, 1, 0.01);
 	const lifeSpan = Math.floor(randNumber(15, 30));
+	const velMag = Math.floor(randNumber(4, 15));
 
-
-	const leftExtreme = -size,
-		rightExtreme = width + size,
-		topExtreme = -size,
-		bottomExtreme = height + size;
+	const leftExtreme = 0,
+		rightExtreme = width,
+		topExtreme = 0,
+		bottomExtreme = height;
 
 	const pos = getRandPosInRect(
 		leftExtreme,
@@ -62,9 +40,9 @@ export function generateEntity(
 		topExtreme,
 		bottomExtreme
 	);
-	
+
 	const targetLeft = 0.1 * width,
-		  targetTop = 0.1 * height;
+		targetTop = 0.1 * height;
 
 	const targetPos = getRandPosInRect(
 		targetLeft,
@@ -72,21 +50,19 @@ export function generateEntity(
 		targetTop,
 		height - targetTop
 	);
-	
+
 	const diff = {
 		x: targetPos.x - pos.x,
-		y: targetPos.y - pos.y
-	}
+		y: targetPos.y - pos.y,
+	};
 
 	normalizeVec(diff);
 
-	diff.x *= 10;
-	diff.y *= 10;
+	diff.x *= velMag;
+	diff.y *= velMag;
 
 	const vel = diff;
 
-
-	
 	entityArr.push(
 		new Entity({
 			pos,
@@ -94,7 +70,7 @@ export function generateEntity(
 			size,
 			angleVel,
 			startOpacity,
-			lifeSpan
+			lifeSpan,
 		})
 	);
 }
