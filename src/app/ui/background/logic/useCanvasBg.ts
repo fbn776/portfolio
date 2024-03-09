@@ -1,26 +1,8 @@
 "use client";
 
-import { RefObject, useEffect } from "react";
+import { RefObject, useEffect} from "react";
 import Entity from "./Entity";
 import { generateEntity } from "./generateEntity";
-
-// export class Debug {
-// 	static rects: { x: number; y: number; w: number; h: number }[] = [];
-
-// 	static add(rect: typeof this.rects[0]) {
-// 		this.rects.push(rect);
-// 	}
-
-// 	static draw(ctx: CanvasRenderingContext2D) {
-// 		for (let rect of this.rects) {
-// 			ctx.beginPath();
-// 			ctx.strokeStyle = "green";
-// 			ctx.rect(rect.x, rect.y, rect.w, rect.h);
-// 			ctx.stroke();
-// 			ctx.closePath();
-// 		}
-// 	}
-// }
 
 export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 	useEffect(() => {
@@ -43,6 +25,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			height = window.innerHeight;
 
 		const ctx = canvas.getContext("2d");
+		let entityArr: Entity[] = [];
 
 		if (!ctx) return;
 
@@ -52,6 +35,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 		const resize = () => {
 			canvas.width = width = window.innerWidth;
 			canvas.height = height = window.innerHeight;
+			entityArr = [];
 		};
 
 		window.addEventListener("resize", resize);
@@ -61,7 +45,10 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 		 */
 		setTimeout(resize, 0);
 
-		const entityArr: Entity[] = [];
+		for(let i = 0; i < 10; i++) {
+			console.log(width, height)
+			generateEntity(width, height, entityArr);
+		}
 
 		let drawID: number;
 		let now;
@@ -83,7 +70,6 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 
 				entity.update(dt);
 				entity.draw(ctx);
-				// Debug.draw(ctx);
 			}
 			lastTime = now;
 			drawID = requestAnimationFrame(draw);

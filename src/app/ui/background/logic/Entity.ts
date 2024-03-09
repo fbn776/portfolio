@@ -1,15 +1,20 @@
 import { Vec2D } from "@/app/types";
-
+import { mapValue } from "@/app/utils";
 
 export default class Entity {
 	private age: number = 0;
 	private pos: Vec2D;
 	private vel: Vec2D;
 	private angle: number = 0;
-	private angleVel: number = 1;
-	private lifeSpan: number = 10;
+	private angleVel: number;
 	private sprite: HTMLImageElement;
 	private size: number;
+	private cs: number = 0; // size / 2
+	private initialOpacity: number;
+	private opacity: number;
+	private lifeSpan: number = 10;
+	// Once age surpasses weakLife, the entity starts to fade.
+	private weakLife: number;
 
 	static sprites: HTMLImageElement[] = [];
 
@@ -18,6 +23,8 @@ export default class Entity {
 		vel: Vec2D;
 		lifeSpan?: number;
 		size: number;
+		angleVel: number;
+		startOpacity: number;
 	}) {
 		this.lifeSpan = data.lifeSpan || 10;
 		this.pos = data.pos;
@@ -25,6 +32,11 @@ export default class Entity {
 		this.sprite =
 			Entity.sprites[Math.floor(Math.random() * Entity.sprites.length)];
 		this.size = data.size;
+		this.cs = this.size / 2;
+		this.angleVel = data.angleVel;
+		this.opacity = this.initialOpacity = data.startOpacity;
+
+		this.weakLife = this.lifeSpan * 0.8;
 	}
 
 	isDead() {
@@ -32,6 +44,16 @@ export default class Entity {
 	}
 
 	update(dt: number) {
+		if (this.age >= this.weakLife) {
+			this.opacity = mapValue(
+				this.age,
+				this.weakLife,
+				this.lifeSpan,
+				this.initialOpacity,
+				0
+			);
+		}
+
 		this.pos.x += this.vel.x * dt;
 		this.pos.y += this.vel.y * dt;
 
@@ -40,20 +62,17 @@ export default class Entity {
 	}
 
 	draw(ctx: CanvasRenderingContext2D) {
-		//ctx.fillRect(this.pos.x, this.pos.y, 20, 20);
-		ctx.drawImage(this.sprite, this.pos.x, this.pos.y, this.size, this.size);
-
-		ctx.beginPath()
+		ctx.beginPath();
 		ctx.save();
-			ctx.strokeStyle = "red";
+		ctx.globalAlpha = this.opacity;
 
-			ctx.translate(this.pos.x, this.pos.y);
-			ctx.stroke();
-			ctx.moveTo(0, 0);
-			ctx.lineTo(this.vel.x, this.vel.y);
-			ctx.stroke();
-
+		ctx.translate(this.pos.x, this.pos.y);
+		ctx.rotate(this.angle);
+		ctx.drawImage(this.sprite, -this.cs, -this.cs, this.size, this.size);
+		ctx.fillStyle = "red";
+		ctx.fillRect(0, 0, 10, 10);
+		ctx.globalAlpha = 1;
 		ctx.restore();
-		ctx.closePath()
+		ctx.closePath();
 	}
 }

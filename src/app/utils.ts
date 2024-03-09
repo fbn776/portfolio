@@ -13,3 +13,14 @@ export function normalizeVec(vec: Vec2D) {
 	vec.x /= len;
 	vec.y /= len;
 }
+
+
+export function mapValue(
+	value: number,
+	fromMin: number,
+	fromMax: number,
+	toMin: number,
+	toMax: number
+): number {
+	return (value - fromMin) / (fromMax - fromMin) * (toMax - toMin) + toMin;
+}
