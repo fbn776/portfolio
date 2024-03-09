@@ -2,40 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+.outline-debug {
+	outline: 1px solid red;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: #f5f5f5;
+	width: 4px;
+	height: 4px;
+	@apply bg-primary;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #212121;
+	background-color: #212121;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #20b98f;
-  border-radius: 10px;
+	@apply bg-primary bg-opacity-40;
+	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #ccc;
+	@apply bg-primary;
 }
 
 /* Optional: Remove arrows */
 ::-webkit-scrollbar-button {
-  display: none;
+	display: none;
 }
 
 /* Text Selection */
 *::selection {
-  background: var(--clr-primary);
-  color: white;
+	@apply bg-primary;
+	color: white;
 }
 *::-moz-selection {
-  background: var(--clr-primary);
-  color: white;
+	@apply bg-primary;
+	color: white;
 }
-
 
 body {
 	background-image: linear-gradient(
@@ -53,13 +56,14 @@ body {
 	);
 	width: 100dvw;
 	height: 100dvh;
-  overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 .avatar-cont {
 	position: relative;
-	width: 500px;
-	height: 500px;
+	width: 450px;
+	height: auto;
+	aspect-ratio: 1 / 1;
 	@apply bg-primary;
 	display: flex;
 	align-items: center;
@@ -76,29 +80,29 @@ body {
 		border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
 	}
 
-  30% {
-    border-radius: 77% 23% 43% 57% / 80% 65% 35% 20% ;
-  }
+	30% {
+		border-radius: 77% 23% 43% 57% / 80% 65% 35% 20%;
+	}
 	50% {
-    border-radius: 63% 37% 68% 32% / 70% 38% 62% 30% ;
+		border-radius: 63% 37% 68% 32% / 70% 38% 62% 30%;
 	}
 }
 
 .nav-link {
-  position: relative;
+	position: relative;
 }
 
 .nav-link::before {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: -10%;
-  bottom: -5px;
-  @apply bg-primary border-primary;
-  transition: 0.5s width;
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	left: -10%;
+	bottom: -5px;
+	@apply bg-primary border-primary;
+	transition: 0.5s width;
 }
 
 .nav-link:hover::before {
-  width: 120%;
+	width: 120%;
 }

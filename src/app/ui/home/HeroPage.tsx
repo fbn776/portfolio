@@ -1,30 +1,45 @@
 "use client";
 
-import Navbar from "@/app/ui/home/Navbar";
 import clsx from "clsx";
 import { inter, teko } from "@/app/ui/fonts";
-import Image from "next/image";
 import AvatarSVG from "./Avatar";
 import { TypeAnimation } from "react-type-animation";
 
 export default function HeroPage() {
 	return (
 		<>
-			<Navbar />
-			<section className="flex w-full justify-between">
+			<section className="flex w-full justify-between max-lg:flex-col-reverse max-lg:flex max-lg:items-center select-none">
 				<div
-					className={`${inter.className} mt-10 text-white text-8xl leading-tight tracking-wide max-w-[60%]`}
+					className={`${inter.className} mt-10 text-white tracking-wide flex flex-col justify-start items-start`}
 				>
-					<h1 className="mb-6">Hello;</h1>
-					<div>
+					<div className="text-8xl max-lg:hidden">
+						<span className="block mb-5 max-lg:inline">Hello, </span>
 						I&apos;m{" "}
-						<span className={clsx(teko.className, "text-primary text-9xl m-0")}>
+						<span
+							className={`${teko.className} text-primary text-9xl tracking-wide`}
+						>
 							Febin
 						</span>
 					</div>
+					<div className="w-full text-8xl hidden max-lg:inline-block max-sm:text-6xl">
+						Hello,
+						<span className="block mt-3">
+							I&apos;m{" "}
+							<span
+								className={`${teko.className} text-primary text-9xl max-sm:text-8xl tracking-wide mt-20`}
+							>
+								Febin
+							</span>
+						</span>
+					</div>
+
+					<br />
 
 					<TypeAnimation
 						sequence={[
+							">",
+							"> CS undergrad",
+							1000,
 							"> Student",
 							1000,
 							"> Developer",
@@ -37,7 +52,8 @@ export default function HeroPage() {
 						aria-label="I'm a student, front end dev, web dev, full stack, aspiring engineer"
 						speed={25}
 						repeat={Infinity}
-						className="text-3xl m-0"
+						className="text-3xl max-sm:text-lg max-sm:opacity-80"
+						preRenderFirstString={true}
 					/>
 				</div>
 				<AvatarSVG />

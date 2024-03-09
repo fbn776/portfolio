@@ -10,6 +10,7 @@ const config: Config = {
 		extend: {
 			colors: {
 				primary: "rgb(59 130 246)",
+				secondary: "hsl(240deg 55% 6%)",
 				//
 			},
 			backgroundImage: {
