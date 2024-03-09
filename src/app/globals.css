@@ -90,6 +90,7 @@ body {
 
 .nav-link {
 	position: relative;
+	@apply max-sm:hidden;
 }
 
 .nav-link::before {

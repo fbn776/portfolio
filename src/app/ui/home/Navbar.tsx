@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
+import { IconCategory2, IconMenuDeep, IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { textFont, headerFont } from "@/app/ui/fonts";
 
 //TODO do this;
@@ -16,7 +16,7 @@ export default function Navbar() {
 				>
 					FBN776
 				</h1>
-				<section className="flex gap-8">
+				<section className="flex gap-8 max-sm:gap-5">
 					<Link draggable="false" href="#about" className="nav-link">
 						About
 					</Link>
@@ -30,6 +30,7 @@ export default function Navbar() {
 						Contact
 					</Link>
 					{theme === "light" ? <IconMoonFilled /> : <IconSunFilled />}
+					<IconCategory2 className="sm:hidden" />
 				</section>
 			</nav>
 		</>
