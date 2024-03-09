@@ -8,6 +8,7 @@ export default function AvatarSVG() {
 					src="/images/avatar.webp"
 					fill={true}
 					alt="Febin's avatar"
+					quality={100}
 					draggable={false}
 					priority={true}
 				/>
