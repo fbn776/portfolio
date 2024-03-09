@@ -1,19 +1,11 @@
-import {Inter, Barlow, Teko, Roboto, Poppins} from "next/font/google"
+import { Teko, Poppins } from "next/font/google";
 
-export const inter = Poppins({
-    weight: ["400"],
-    subsets: ['latin']
+export const headerFont = Teko({
+	subsets: ["latin"],
+	weight: ["400"],
 });
 
-
-export const barlow = Poppins({
-    subsets: ['latin'],
-    weight: ["500"]
-})
-
-export const teko = Teko({
-    subsets: ['latin'],
-    weight: ["400"]
-})
-
-
+export const textFont = Poppins({
+	weight: ["400"],
+	subsets: ["latin"],
+});

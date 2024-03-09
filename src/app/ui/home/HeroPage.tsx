@@ -1,31 +1,31 @@
 "use client";
 
-import { inter, teko } from "@/app/ui/fonts";
+import { textFont, headerFont } from "@/app/ui/fonts";
 import AvatarSVG from "./Avatar";
 import { TypeAnimation } from "react-type-animation";
 
 export default function HeroPage() {
 	return (
 		<>
-			<section className="flex w-full justify-between max-lg:flex-col-reverse max-lg:flex max-lg:items-center select-none">
+			<section className="flex w-full justify-between max-lg:flex-col-reverse max-lg:flex max-lg:items-center max-sm:items-start select-none">
 				<div
-					className={`${inter.className} mt-10 text-white tracking-wide flex flex-col justify-start items-start`}
+					className={`${textFont.className} mt-10 max-sm:mt-20 text-white tracking-wide flex flex-col justify-start items-start`}
 				>
 					<div className="text-8xl max-lg:hidden">
 						<span className="block mb-5 max-lg:inline">Hello, </span>
 						I&apos;m{" "}
 						<span
-							className={`${teko.className} text-primary text-9xl tracking-wide`}
+							className={`${headerFont.className} text-primary text-9xl tracking-wide`}
 						>
 							Febin
 						</span>
 					</div>
-					<div className="w-full text-8xl hidden max-lg:inline-block max-sm:text-6xl">
+					<div className="w-full text-8xl hidden max-lg:inline-block max-sm:text-5xl">
 						Hello,
 						<span className="block mt-3">
 							I&apos;m{" "}
 							<span
-								className={`${teko.className} text-primary text-9xl max-sm:text-8xl tracking-wide mt-20`}
+								className={`${headerFont.className} text-primary text-9xl max-sm:text-7xl tracking-wide mt-20`}
 							>
 								Febin
 							</span>

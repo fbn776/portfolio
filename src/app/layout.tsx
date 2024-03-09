@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { barlow } from "@/app/ui/fonts";
+import { textFont } from "@/app/ui/fonts";
 
 export const metadata: Metadata = {
 	title: "fbn776",
@@ -38,7 +38,7 @@ export default function RootLayout({
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			</head>
-			<body className={barlow.className}>{children}</body>
+			<body className={textFont.className}>{children}</body>
 		</html>
 	);
 }
