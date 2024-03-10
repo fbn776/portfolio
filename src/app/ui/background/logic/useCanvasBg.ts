@@ -1,5 +1,3 @@
-"use client";
-
 import { RefObject, useEffect} from "react";
 import Entity from "./Entity";
 import { generateEntity } from "./generateEntity";
@@ -8,7 +6,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 	useEffect(() => {
 		const spritesArr: HTMLImageElement[] = [];
 
-		for (let i = 0; i < 10; i++) {
+		for (let i = 0; i < 12; i++) {
 			const img = new Image();
 			img.src = `/bg-entity/blob (${i}).svg`;
 
@@ -57,7 +55,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			const dt = (now - lastTime) / 1000.0;
 			ctx.clearRect(0, 0, width, height);
 
-			if (Math.random() < 0.1 && entityArr.length < 20) generateEntity(width, height, entityArr);
+			if (Math.random() < 0.1 && entityArr.length < 15) generateEntity(width, height, entityArr);
 
 			for (let i = 0; i < entityArr.length; i++) {
 				const entity = entityArr[i];
