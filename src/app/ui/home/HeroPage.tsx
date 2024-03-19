@@ -1,6 +1,6 @@
 "use client";
 
-import { textFont, secondaryFont } from "@/app/ui/fonts";
+import { textFont, headerFont } from "@/app/ui/fonts";
 import Avatar from "./Avatar";
 import { TypeAnimation } from "react-type-animation";
 
@@ -15,7 +15,7 @@ export default function HeroPage() {
 						<span className="block mb-5 max-lg:inline">Hello, </span>
 						I&apos;m{" "}
 						<span
-							className={`${secondaryFont.className} text-primary text-9xl tracking-wide`}
+							className={`${headerFont.className} text-primary text-9xl tracking-wide`}
 						>
 							Febin
 						</span>
@@ -25,7 +25,7 @@ export default function HeroPage() {
 						<span className="block mt-3">
 							I&apos;m{" "}
 							<span
-								className={`${secondaryFont.className} text-primary text-9xl max-sm:text-7xl tracking-wide mt-20`}
+								className={`${headerFont.className} text-primary text-9xl max-sm:text-7xl tracking-wide mt-20`}
 							>
 								Febin
 							</span>

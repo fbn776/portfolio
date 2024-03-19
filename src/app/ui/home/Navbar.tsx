@@ -4,7 +4,7 @@ import {
 	IconMoonFilled,
 	IconSunFilled,
 } from "@tabler/icons-react";
-import { textFont, secondaryFont } from "@/app/ui/fonts";
+import { textFont, headerFont } from "@/app/ui/fonts";
 
 //TODO do this;
 export default function Navbar() {
@@ -16,7 +16,7 @@ export default function Navbar() {
 				className={`${textFont.className} w-full text-white flex justify-between py-10 items-center`}
 			>
 				<h1
-					className={`${secondaryFont.className} text-2xl tracking-wide text-primary`}
+					className={`${headerFont.className} text-2xl tracking-wide text-primary`}
 				>
 					FBN776
 				</h1>

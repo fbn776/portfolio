@@ -109,13 +109,18 @@ body {
 }
 
 .header {
-	@apply text-primary text-3xl tracking-wide;
+	@apply text-primary text-6xl tracking-wide;
+	display: flex;
+	align-items: center;
 }
 
 .header::before {
 	content: '';
-	width: 20px;
-	height: 0px;
-
+	position: relative;
+	width: 60px;
+	height: 3px;
+	border-radius: 10px;
+	display: inline-block;
+	margin-right: 20px;
 	@apply bg-primary;
 }

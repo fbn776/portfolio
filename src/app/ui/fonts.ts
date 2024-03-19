@@ -1,6 +1,6 @@
 import { Teko, Poppins } from "next/font/google";
 
-export const secondaryFont = Teko({
+export const headerFont = Teko({
 	subsets: ["latin"],
 	weight: ["400"],
 });
