@@ -1,6 +1,7 @@
 import HeroPage from "@/app/ui/home/HeroPage";
 import Background from "./ui/background/Background";
 import Navbar from "./ui/home/Navbar";
+import About from "./ui/home/About";
 
 export default function Home() {
 	return (
@@ -8,6 +9,7 @@ export default function Home() {
 			<Background />
 			<Navbar />
 			<HeroPage />
+			<About/>
 		</main>
 	);
 }

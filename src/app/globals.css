@@ -62,7 +62,7 @@ body {
 .avatar-cont {
 	position: relative;
 	width: 450px;
-	height: auto;
+	height: 450px;
 	aspect-ratio: 1 / 1;
 	@apply bg-primary max-sm:w-full;
 	display: flex;
@@ -106,4 +106,16 @@ body {
 
 .nav-link:hover::before {
 	width: 120%;
+}
+
+.header {
+	@apply text-primary text-3xl tracking-wide;
+}
+
+.header::before {
+	content: '';
+	width: 20px;
+	height: 0px;
+
+	@apply bg-primary;
 }

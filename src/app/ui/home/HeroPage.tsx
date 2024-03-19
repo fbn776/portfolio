@@ -1,13 +1,13 @@
 "use client";
 
-import { textFont, headerFont } from "@/app/ui/fonts";
-import AvatarSVG from "./Avatar";
+import { textFont, secondaryFont } from "@/app/ui/fonts";
+import Avatar from "./Avatar";
 import { TypeAnimation } from "react-type-animation";
 
 export default function HeroPage() {
 	return (
 		<>
-			<section className="flex w-full justify-between max-lg:flex-col-reverse max-lg:flex max-lg:items-center max-sm:items-start select-none">
+			<section className="flex w-full min-h-[100dvh] justify-between max-lg:flex-col-reverse max-lg:flex max-lg:items-center max-sm:items-start select-none">
 				<div
 					className={`${textFont.className} mt-10 max-sm:mt-20 text-white tracking-wide flex flex-col justify-start items-start`}
 				>
@@ -15,7 +15,7 @@ export default function HeroPage() {
 						<span className="block mb-5 max-lg:inline">Hello, </span>
 						I&apos;m{" "}
 						<span
-							className={`${headerFont.className} text-primary text-9xl tracking-wide`}
+							className={`${secondaryFont.className} text-primary text-9xl tracking-wide`}
 						>
 							Febin
 						</span>
@@ -25,7 +25,7 @@ export default function HeroPage() {
 						<span className="block mt-3">
 							I&apos;m{" "}
 							<span
-								className={`${headerFont.className} text-primary text-9xl max-sm:text-7xl tracking-wide mt-20`}
+								className={`${secondaryFont.className} text-primary text-9xl max-sm:text-7xl tracking-wide mt-20`}
 							>
 								Febin
 							</span>
@@ -55,7 +55,7 @@ export default function HeroPage() {
 						preRenderFirstString={true}
 					/>
 				</div>
-				<AvatarSVG />
+				<Avatar />
 			</section>
 		</>
 	);

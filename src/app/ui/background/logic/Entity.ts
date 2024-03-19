@@ -9,7 +9,7 @@ export default class Entity {
 	private angleVel: number;
 	private sprite: HTMLImageElement;
 	private size: number;
-	private cs: number = 0; // size / 2
+	private cs: number = 0;
 	private initialOpacity: number;
 	private opacity: number;
 	private lifeSpan: number = 10;
@@ -70,6 +70,10 @@ export default class Entity {
 
 		this.angle += this.angleVel * dt;
 		this.age += dt;
+	}
+
+	addForce() {
+		
 	}
 
 	draw(ctx: CanvasRenderingContext2D) {
