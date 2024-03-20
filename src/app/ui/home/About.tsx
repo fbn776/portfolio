@@ -57,6 +57,10 @@ export default function Abount() {
 					</div>
 				</div>
 			</div>
+			<br/>
+
+			<Header text="Education"/>
+			
 			<br />
 			<br />
 		</section>
