@@ -63,7 +63,7 @@ body {
 	position: relative;
 	width: 450px;
 	aspect-ratio: 1 / 1;
-	@apply bg-primary max-sm:w-full;
+	@apply bg-primary max-sm:w-full lg:h-[450px];
 	display: flex;
 	align-items: center;
 	justify-content: center;

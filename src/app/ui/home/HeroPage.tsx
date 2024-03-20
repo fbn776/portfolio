@@ -7,7 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 export default function HeroPage() {
 	return (
 		<>
-			<section className="flex w-full min-h-[100vh] pt-28 justify-between max-lg:justify-end max-lg:gap-16 max-lg:flex-col-reverse max-lg:flex max-lg:items-center max-sm:items-start select-none">
+			<section className="flex w-full min-h-[100vh] pt-28 justify-between lg:pt-0 lg:items-center max-lg:justify-end max-lg:gap-16 max-lg:flex-col-reverse max-lg:flex max-lg:items-center max-sm:items-start select-none">
 				<div
 					className={`${textFont.className} text-white tracking-wide flex flex-col justify-start items-start`}
 				>
