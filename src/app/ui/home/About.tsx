@@ -13,7 +13,7 @@ export default function Abount() {
 			<Header text="About" />
 			<br />
 			<div className="flex gap-10 max-lg:flex-col">
-				<div className="min-w-[100%] aspect-square bg-red-900">Hello</div>
+				<div className="min-w-[100%] lg:min-w-[450px] aspect-square bg-red-900">Hello</div>
 				<p className={`${textFont.className} text-white`}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet
