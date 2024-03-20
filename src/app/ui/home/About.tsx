@@ -8,7 +8,7 @@ export default function Abount() {
 			<Header text="About" />
 			<br />
 			<div className="flex gap-10 max-lg:flex-col">
-				<div className="min-w-[400px] aspect-square max-lg: bg-red-700">Hello</div>
+				<div className="min-w-[100%] aspect-square bg-red-900">Hello</div>
 				<div className={`${textFont.className} text-white`}>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
