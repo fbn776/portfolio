@@ -62,7 +62,6 @@ body {
 .avatar-cont {
 	position: relative;
 	width: 450px;
-	height: 450px;
 	aspect-ratio: 1 / 1;
 	@apply bg-primary max-sm:w-full;
 	display: flex;
