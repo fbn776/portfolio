@@ -127,5 +127,11 @@ body {
 
 .navbar {
 	z-index: 9999;
-background: rgba(0, 0, 0, 0.6);
+	transition: background-color 0.2s 0s, padding 0.2s 0s;
+	@apply py-10;
+}
+
+.navbar.scrolled-state {
+	background-color: rgba(0, 0, 0, 0.6);
+	@apply py-5
 }

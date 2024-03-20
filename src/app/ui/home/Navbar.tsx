@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
 	IconCategory2,
@@ -5,14 +7,35 @@ import {
 	IconSunFilled,
 } from "@tabler/icons-react";
 import { textFont, headerFont } from "@/app/ui/fonts";
+import { useEffect, useRef } from "react";
 
 //TODO do this;
 export default function Navbar() {
 	let theme = "dark";
+	const navbar = useRef<HTMLElement>(null);
+
+	useEffect(() => {
+		function scrollFunc(e: Event) {
+			if(!navbar.current)
+				return;
+
+			if(window.scrollY > 50) {
+				navbar.current.classList.add('scrolled-state');
+			} else {
+				navbar.current.classList.remove("scrolled-state");
+			}
+		}
+		window.addEventListener("scroll", scrollFunc);
+
+		return () => {
+			window.removeEventListener("scroll", scrollFunc);
+		};
+	}, []);
 
 	return (
 		<>
 			<nav
+				ref={navbar}
 				className={`${textFont.className} navbar fixed z-50 left-0 w-full text-white flex justify-between py-5 px-10 items-center`}
 			>
 				<h1
