@@ -115,7 +115,7 @@ body {
 }
 
 .header::before {
-	content: '';
+	content: "";
 	position: relative;
 	width: 60px;
 	height: 3px;
@@ -123,4 +123,9 @@ body {
 	display: inline-block;
 	margin-right: 20px;
 	@apply bg-primary;
+}
+
+.navbar {
+	z-index: 9999;
+background: rgba(0, 0, 0, 0.4);
 }

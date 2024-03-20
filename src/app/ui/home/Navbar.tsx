@@ -13,7 +13,7 @@ export default function Navbar() {
 	return (
 		<>
 			<nav
-				className={`${textFont.className} w-full text-white flex justify-between py-10 items-center`}
+				className={`${textFont.className} navbar fixed z-50 left-0 w-full text-white flex justify-between py-10 pb-5 px-10 items-center`}
 			>
 				<h1
 					className={`${headerFont.className} text-2xl tracking-wide text-primary`}
