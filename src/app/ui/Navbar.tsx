@@ -15,18 +15,14 @@ export default function Navbar() {
 	const navbar = useRef<HTMLElement>(null);
 
 	useEffect(() => {
-		function scrollFunc(e: Event) {
+		function scrollFunc() {
 			if(!navbar.current)
 				return;
 
-			if(window.scrollY > 50) {
-				navbar.current.classList.add('scrolled-state');
-			} else {
-				navbar.current.classList.remove("scrolled-state");
-			}
+			navbar.current.classList.toggle('scrolled-state', window.scrollY > 50);
 		}
+		scrollFunc();
 		window.addEventListener("scroll", scrollFunc);
-
 		return () => {
 			window.removeEventListener("scroll", scrollFunc);
 		};
