@@ -7,6 +7,7 @@ import {
 import Header from "../components/Header";
 import { textFont } from "../fonts";
 import Image from "next/image";
+import EducationTimeline from "./EducationTimeline";
 
 export default function Abount() {
 	return (
@@ -53,23 +54,18 @@ export default function Abount() {
 							<IconBrandInstagram />
 						</div>
 
-						<button className="bg-primary rounded-lg px-5 py-3">Read More</button>
+						<button className="bg-primary rounded-lg px-5 py-3">
+							Read More
+						</button>
 					</div>
 				</div>
 			</div>
-			<br/>
+			<br />
 
-			<Header text="Education"/>
-			
+			<Header text="Education" />
+			<EducationTimeline />
 			<br />
 			<br />
 		</section>
 	);
 }
-
-// <div className="flex gap-5">
-// 	<IconBrandLinkedin />
-// 	<IconBrandGithub />
-// 	<IconBrandX />
-// 	<IconBrandInstagram />
-// </div>;
