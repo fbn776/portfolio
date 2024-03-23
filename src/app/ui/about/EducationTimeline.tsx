@@ -1,5 +1,3 @@
-"use client";
-
 import EducationData from "@/app/data/EducationData";
 import "./style.css";
 

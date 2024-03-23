@@ -67,7 +67,6 @@
 
 	/* Title*/
 	.container::before {
-
 		left: 20px;
 		width: 100px;
 		@apply font-semibold opacity-70;
