@@ -17,7 +17,7 @@ export default function EducationTimeline() {
 								</h1>
 								<li> {data.course}</li>
 								{data.description ? (
-									<p className="text-pretty m-2 text-base font-light opacity-70">
+									<p className="text-pretty py-2 pl-5 text-base font-light opacity-80">
 										{data.description}
 									</p>
 								) : (
