@@ -1,27 +1,61 @@
-@import "rsuite/Timeline/styles/index.css";
+:root {
+	--left-gap: 120px;
+}
 
-.custom-timeline {
-	 margin-left: 20px;
+.timeline {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
 }
- .custom-timeline .rs-timeline-item-custom-dot .rs-icon {
-	 position: absolute;
-	 background: #fff;
-	 top: 0;
-	 left: -2px;
-	 border: 2px solid #ddd;
-	 width: 40px;
-	 height: 40px;
-	 border-radius: 50%;
-	 font-size: 18px;
-	 color: #999;
-	 margin-left: -13px;
-	 justify-content: center;
-	 padding: 8px;
+
+.timeline::after {
+	content: "";
+	position: absolute;
+	width: 4px;
+	@apply bg-primary;
+	top: 0;
+	bottom: 0;
+	left: var(--left-gap);
+	margin-left: -3px;
+	border-radius: 10px;
 }
- .custom-timeline .rs-timeline-item-content {
-	 margin-left: 24px;
+
+.container {
+	padding: 10px 0px 10px 25px;
+	position: relative;
+	width: calc(100% - var(--left-gap));
+	left: var(--left-gap);
 }
- .rs-timeline-item-content p {
-	 margin: 0;
+
+/* Title*/
+.container::before {
+	content: attr(data-title);
+	position: absolute;
+	width: 100px;
+	left: -120px;
+	color: white;
+	top: 12px;
+	@apply font-semibold;
 }
- 
+
+/* The circles on the timeline */
+.container::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: -11px;
+	border: 3px solid;
+	@apply border-primary;
+	background-color: white;
+	top: 15px;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+/* The actual content */
+.content {
+	text-align: left;
+	position: relative;
+	color: white;
+}
