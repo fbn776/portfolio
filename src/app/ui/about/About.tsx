@@ -7,7 +7,8 @@ import {
 import Header from "../components/Header";
 import { textFont } from "../fonts";
 import Image from "next/image";
-import EducationTimeline from "./EducationTimeline";
+import Education from "./Education";
+import Experience from "./Experience";
 
 export default function Abount() {
 	return (
@@ -63,7 +64,11 @@ export default function Abount() {
 			<br />
 
 			<Header text="Education" />
-			<EducationTimeline />
+			<Education />
+			<br />
+
+			<Header text="Experience" />
+			<Experience />
 			<br />
 			<br />
 		</section>

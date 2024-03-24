@@ -15,36 +15,58 @@
 	@apply bg-primary;
 	top: 0;
 	bottom: 0;
-	left: var(--left-gap);
 	margin-left: -3px;
 	border-radius: 10px;
 }
 
-.container {
-	padding: 10px 0px 10px 25px;
-	position: relative;
-	width: calc(100% - var(--left-gap));
+.timeline[data-align="left"]::after {
 	left: var(--left-gap);
 }
 
+.timeline[data-align="right"]::after {
+	right: var(--left-gap);
+}
+
+.timeline .container {
+	position: relative;
+	width: calc(100% - var(--left-gap));
+}
+
+.timeline[data-align="left"] .container {
+	padding: 10px 0px 10px 25px;
+	left: var(--left-gap);
+}
+
+.timeline[data-align="right"] .container {
+	padding: 10px 25px 10px 0px;
+	right: 0;
+	text-align: right;
+}
+
 /* Title*/
-.container::before {
+.timeline .container::before {
 	content: attr(data-title);
 	position: absolute;
 	width: 100px;
-	left: -120px;
 	color: white;
 	top: 12px;
 	@apply font-semibold;
 }
 
+.timeline[data-align="left"] .container::before {
+	left: -120px;
+}
+
+/* .timeline[data-align='right'] .container::before {
+	
+} */
+
 /* The circles on the timeline */
-.container::after {
+.timeline .container::after {
 	content: "";
 	position: absolute;
 	width: 20px;
 	height: 20px;
-	left: -11px;
 	border: 3px solid;
 	@apply border-primary;
 	background-color: white;
@@ -53,23 +75,51 @@
 	z-index: 1;
 }
 
+.timeline[data-align="left"] .container::after {
+	left: -11px;
+}
+
+.timeline[data-align="right"] .container::after {
+	right: -8px;
+}
+
 /* The actual content */
-.content {
-	text-align: left;
+.timeline .content {
 	position: relative;
 	color: white;
 }
 
+.timeline[data-align="left"] .content {
+	text-align: left;
+}
+
+.timeline[data-align="right"] .content {
+	text-align: end;
+}
+
+.timeline[data-align="right"] .skill-bubbles {
+	flex-direction: row-reverse;
+}
+
 @media screen and (max-width: 600px) {
 	:root {
-	--left-gap: 0px;
+		--left-gap: 0px;
 	}
 
 	/* Title*/
-	.container::before {
-		left: 20px;
+	.timeline .container::before {
 		width: 100px;
 		@apply font-semibold opacity-70;
+	}
+
+	.timeline[data-align="left"] .container::before {
+		text-align: left;
+		left: 25px;
+	}
+
+	.timeline[data-align="right"] .container::before {
+		text-align: right;
+		right: 25px;
 	}
 
 	.content {
