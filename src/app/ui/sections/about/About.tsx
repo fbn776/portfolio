@@ -9,11 +9,10 @@ import { textFont } from "../../fonts";
 import Image from "next/image";
 import Education from "./Education";
 import Experience from "./Experience";
-import { AboutText } from "@/app/data/about/AboutText";
 
 export default function About() {
 	return (
-		<section id="about">
+		<section id="about" className="main-section">
 			<Header text="About" textSize="text-6xl" />
 			<br />
 			<div className="flex gap-20 max-lg:gap-10 max-lg:flex-col">
