@@ -1,5 +1,5 @@
-import EducationData from "@/app/data/EducationData";
-import Timeline from "../components/timeline/Timeline";
+import EducationData from "@/app/data/about/EducationData";
+import Timeline from "../../components/timeline/Timeline";
 
 export default function Education() {
 	return (

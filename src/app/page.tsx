@@ -1,8 +1,8 @@
-import HeroPage from "@/app/ui/heropage/HeroPage";
+import HeroPage from "@/app/ui/sections/heropage/HeroPage";
 import Background from "./ui/background/Background";
 import Navbar from "./ui/Navbar";
-import About from "./ui/about/About";
-import Skills from "./ui/skills/Skills";
+import About from "./ui/sections/about/About";
+import Skills from "./ui/sections/skills/Skills";
 
 export default function Home() {
 	return (

@@ -1,5 +1,5 @@
-import ExperienceData from "@data/ExperienceData";
-import Timeline from "../components/timeline/Timeline";
+import ExperienceData from "@/app/data/about/ExperienceData";
+import Timeline from "../../components/timeline/Timeline";
 
 export default function Experience() {
 	return (
@@ -19,7 +19,14 @@ export default function Experience() {
 						{data.skills && (
 							<div className="flex gap-3 mt-2 flex-wrap skill-bubbles">
 								{data.skills.map((text, i) => {
-									return <span className="px-4 bg-primary bg-opacity-60 text-sm py-1 rounded-full min-w-[50px] text-center" key={i}>{text}</span>;
+									return (
+										<span
+											className="px-4 bg-primary bg-opacity-60 text-sm py-1 rounded-full min-w-[50px] text-center"
+											key={i}
+										>
+											{text}
+										</span>
+									);
 								})}
 							</div>
 						)}
