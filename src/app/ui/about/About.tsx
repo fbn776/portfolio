@@ -16,7 +16,7 @@ export default function About() {
 			<Header text="About" textSize="text-6xl"/>
 			<br />
 			<div className="flex gap-20 max-lg:gap-10 max-lg:flex-col">
-				<div className="blob-cont relative flex justify-center items-center min-w-[100%] lg:min-w-[450px] aspect-square bg-red-900">
+				<div className="blob-cont blob-anim-2 relative flex justify-center items-center min-w-[100%] lg:min-w-[450px] aspect-square bg-red-900">
 					<div className="absolute bottom-0 aspect-square w-[80%] inline-block">
 						<Image
 							src="/images/about.webp"

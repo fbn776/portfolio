@@ -4,7 +4,7 @@ import "./style.css";
 
 export default function Avatar() {
 	return (
-		<div className="avatar-cont">
+		<div className="avatar-cont blob-cont blob-anim-1">
 			<div className="absolute bottom-0 aspect-square w-[80%] inline-block">
 				<Image
 					src="/images/avatar.webp"

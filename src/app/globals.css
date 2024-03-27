@@ -90,7 +90,7 @@ body {
 }
 
 .header::before {
-	content: '';
+	content: "";
 	position: relative;
 	width: 60px;
 	height: 4px;
@@ -108,5 +108,48 @@ body {
 
 .navbar.scrolled-state {
 	background-color: rgba(0, 0, 0, 0.6);
-	@apply py-5
+	@apply py-5;
+}
+
+.blob-cont {
+	border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
+	@apply bg-primary;
+	overflow: hidden;
+}
+
+.blob-cont.blob-anim-1 {
+	border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
+	animation: animate-avatar-border-1 30s ease-in-out 0s infinite both;
+}
+
+.blob-cont.blob-anim-2 {
+	animation: animate-avatar-border-2 30s ease-in-out 0s infinite both;
+	border-radius: 30% 70% 70% 30% / 62% 30% 70% 38%;
+}
+
+@keyframes animate-avatar-border-1 {
+	0%,
+	100% {
+		border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
+	}
+
+	30% {
+		border-radius: 77% 23% 43% 57% / 80% 65% 35% 20%;
+	}
+	50% {
+		border-radius: 63% 37% 68% 32% / 70% 38% 62% 30%;
+	}
+}
+
+@keyframes animate-avatar-border-2 {
+	0%,
+	100% {
+		border-radius: 78% 22% 66% 34% / 69% 67% 33% 31%;
+	}
+	30% {
+		border-radius: 49% 51% 70% 30% / 52% 30% 70% 48% 
+	}
+	50% {
+		border-radius: 71% 29% 51% 49% / 41% 28% 72% 59%;
+	}
 }
