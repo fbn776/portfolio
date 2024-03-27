@@ -6,6 +6,10 @@
 	outline: 1px solid red;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
 	width: 4px;
 	height: 4px;
@@ -59,41 +63,6 @@ body {
 	overflow-x: hidden;
 }
 
-.avatar-cont {
-	position: relative;
-	width: 450px;
-	aspect-ratio: 1 / 1;
-	@apply bg-primary max-sm:w-full lg:h-[450px];
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 40px;
-	border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
-	animation: animate-avatar-border 30s ease-in-out 0s infinite both;
-	overflow: hidden;
-}
-
-.blob-cont {
-	border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
-	animation: animate-avatar-border 30s ease-in-out 0s infinite both;
-	@apply bg-primary;
-	overflow: hidden;
-}
-
-@keyframes animate-avatar-border {
-	0%,
-	100% {
-		border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
-	}
-
-	30% {
-		border-radius: 77% 23% 43% 57% / 80% 65% 35% 20%;
-	}
-	50% {
-		border-radius: 63% 37% 68% 32% / 70% 38% 62% 30%;
-	}
-}
-
 .nav-link {
 	position: relative;
 	@apply max-sm:hidden;
@@ -115,16 +84,16 @@ body {
 }
 
 .header {
-	@apply text-white text-4xl tracking-wide my-10;
+	@apply text-white tracking-wide my-10;
 	display: flex;
 	align-items: center;
 }
 
 .header::before {
-	content: "";
+	content: '';
 	position: relative;
-	width: 50px;
-	height: 3px;
+	width: 60px;
+	height: 4px;
 	border-radius: 10px;
 	display: inline-block;
 	margin-right: 15px;

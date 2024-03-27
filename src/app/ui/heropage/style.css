@@ -1,0 +1,34 @@
+.avatar-cont {
+	position: relative;
+	width: 450px;
+	aspect-ratio: 1 / 1;
+	@apply bg-primary max-sm:w-full lg:h-[450px];
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
+	animation: animate-avatar-border 30s ease-in-out 0s infinite both;
+	overflow: hidden;
+}
+
+.blob-cont {
+	border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
+	animation: animate-avatar-border 30s ease-in-out 0s infinite both;
+	@apply bg-primary;
+	overflow: hidden;
+}
+
+@keyframes animate-avatar-border {
+	0%,
+	100% {
+		border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
+	}
+
+	30% {
+		border-radius: 77% 23% 43% 57% / 80% 65% 35% 20%;
+	}
+	50% {
+		border-radius: 63% 37% 68% 32% / 70% 38% 62% 30%;
+	}
+}

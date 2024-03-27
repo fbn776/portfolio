@@ -2,6 +2,7 @@ import HeroPage from "@/app/ui/heropage/HeroPage";
 import Background from "./ui/background/Background";
 import Navbar from "./ui/Navbar";
 import About from "./ui/about/About";
+import Skills from "./ui/skills/Skills";
 
 export default function Home() {
 	return (
@@ -10,6 +11,7 @@ export default function Home() {
 			<Navbar />
 			<HeroPage />
 			<About />
+			<Skills />
 		</main>
 	);
 }

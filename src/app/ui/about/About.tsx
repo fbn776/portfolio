@@ -10,10 +10,10 @@ import Image from "next/image";
 import Education from "./Education";
 import Experience from "./Experience";
 
-export default function Abount() {
+export default function About() {
 	return (
-		<section>
-			<Header text="About" />
+		<section id="about">
+			<Header text="About" textSize="text-6xl"/>
 			<br />
 			<div className="flex gap-20 max-lg:gap-10 max-lg:flex-col">
 				<div className="blob-cont relative flex justify-center items-center min-w-[100%] lg:min-w-[450px] aspect-square bg-red-900">
