@@ -1,5 +1,5 @@
-import { Vec2D } from "@/app/types";
-import { mapValue } from "@/app/utils";
+import { Vec2D } from "@/app/lib/types";
+import { mapValue } from "@/app/lib/utils";
 
 export default class Entity {
 	private age: number = 0;
@@ -72,9 +72,7 @@ export default class Entity {
 		this.age += dt;
 	}
 
-	addForce() {
-		
-	}
+	addForce() {}
 
 	draw(ctx: CanvasRenderingContext2D) {
 		ctx.beginPath();

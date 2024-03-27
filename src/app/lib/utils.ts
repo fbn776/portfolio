@@ -14,7 +14,6 @@ export function normalizeVec(vec: Vec2D) {
 	vec.y /= len;
 }
 
-
 export function mapValue(
 	value: number,
 	fromMin: number,
@@ -22,5 +21,5 @@ export function mapValue(
 	toMin: number,
 	toMax: number
 ): number {
-	return (value - fromMin) / (fromMax - fromMin) * (toMax - toMin) + toMin;
+	return ((value - fromMin) / (fromMax - fromMin)) * (toMax - toMin) + toMin;
 }

@@ -1,6 +1,6 @@
 import HeroPage from "@/app/ui/sections/heropage/HeroPage";
 import Background from "./ui/background/Background";
-import Navbar from "./ui/Navbar";
+import Navbar from "./ui/components/Navbar";
 import About from "./ui/sections/about/About";
 import Skills from "./ui/sections/skills/Skills";
 

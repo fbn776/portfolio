@@ -1,7 +1,7 @@
 "use client";
-import { Vec2D } from "@/app/types";
+import { Vec2D } from "@/app/lib/types";
 import Entity from "./Entity";
-import { mapValue, normalizeVec, randNumber } from "@/app/utils";
+import { mapValue, normalizeVec, randNumber } from "@/app/lib/utils";
 
 function getRandPosInRect(
 	leftExtreme: number,
