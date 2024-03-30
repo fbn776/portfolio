@@ -9,6 +9,8 @@ import { textFont } from "../../fonts";
 import Image from "next/image";
 import Education from "./Education";
 import Experience from "./Experience";
+import Link from "next/link";
+import MyLinks from "@/app/data/about/Links";
 
 export default function About() {
 	return (
@@ -64,10 +66,18 @@ export default function About() {
 
 					<div className="flex justify-between items-center mt-5">
 						<div className="flex gap-5 max-sm:gap-3">
-							<IconBrandLinkedin />
-							<IconBrandGithub />
-							<IconBrandX />
-							<IconBrandInstagram />
+							<Link href={MyLinks.linkedin}>
+								<IconBrandLinkedin className="icon-link"/>
+							</Link>
+							<Link href={MyLinks.github}>
+								<IconBrandGithub className="icon-link"/>
+							</Link>
+							<Link href={MyLinks.twitter}>
+								<IconBrandX className="icon-link"/>
+							</Link>
+							<Link href={MyLinks.instagram}>
+								<IconBrandInstagram className="icon-link"/>
+							</Link>
 						</div>
 
 						<button className="bg-primary rounded-lg px-5 py-3 max-sm:py-2">

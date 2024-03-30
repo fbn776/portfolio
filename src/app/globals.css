@@ -168,3 +168,11 @@ body {
 	
 	@apply border-primary border-opacity-65;
 }
+
+.icon-link {
+	transition: color 0.2s;
+}
+
+.icon-link:hover {
+	@apply text-primary;
+}
