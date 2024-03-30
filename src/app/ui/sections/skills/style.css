@@ -10,10 +10,6 @@
 	overflow: hidden;
 }
 
-.card-flip:hover {
-	@apply bg-opacity-0;
-}
-
 .card-flip:hover::after {
 	opacity: 1;
 	transform: scale(1);
@@ -30,9 +26,10 @@
 	font-size: small;
 	opacity: 0;
 	transform: scale(0);
-	transition: opacity 0.2s, transform 0.2s;
 	background: rgba(7, 7, 24, 0.5);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
 	border: 1px solid rgba(74, 74, 98, 0.25);
+	@apply rounded-lg;
+	transition: opacity 0.2s, transform 0.2s;
 }
