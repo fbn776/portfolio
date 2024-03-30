@@ -13,11 +13,11 @@ export default function Skills() {
 			<div className="w-full flex gap-4 flex-wrap">
 				{SkillsData.map((category, i) => {
 					return (
-						<div
-							className="relative h-full glass rounded p-4"
-							key={i}
-						>
-							<div className="relative z-10 flex w-full flex-wrap gap-4 justify-center items-center">
+						<div className="h-full glass rounded p-4 flex flex-col gap-6" key={i}>
+							<label className="text-center text-white font-semibold bg-primary bg-opacity-20 rounded py-2">
+								{category.name}
+							</label>
+							<div className="flex w-full flex-wrap gap-4 justify-center items-center">
 								{category.skills.map((skill, j) => {
 									return (
 										<div
@@ -31,14 +31,6 @@ export default function Skills() {
 									);
 								})}
 							</div>
-							<span
-								className={clsx(
-									"absolute -top-5 z-0 inset-0 flex items-center justify-center tracking-widest text-5xl opacity-50 text-center text-white font-semibold mt-5",
-									headerFont.className
-								)}
-							>
-								{category.name}
-							</span>
 						</div>
 					);
 				})}
