@@ -11,7 +11,7 @@
 }
 
 .card-flip:hover {
-	@apply bg-opacity-0
+	@apply bg-opacity-0;
 }
 
 .card-flip:hover::after {
@@ -21,7 +21,6 @@
 
 .card-flip::after {
 	content: attr(data-name);
-	@apply bg-primary;
 	position: absolute;
 	inset: 0;
 	display: flex;
@@ -31,5 +30,9 @@
 	font-size: small;
 	opacity: 0;
 	transform: scale(0);
-	transition: opacity 0.2s, transform 0.2s, border-radius 0.5s 0.2s;
+	transition: opacity 0.2s, transform 0.2s;
+	background: rgba(7, 7, 24, 0.5);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(74, 74, 98, 0.25);
 }
