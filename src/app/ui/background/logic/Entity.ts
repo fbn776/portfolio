@@ -1,14 +1,20 @@
 import { Vec2D } from "@/app/lib/types";
-import { mapValue } from "@/app/lib/utils";
+import { clampVec, mapValue } from "@/app/lib/utils";
 
 export default class Entity {
-	private age: number = 0;
+	// Vectors
 	private pos: Vec2D;
 	private vel: Vec2D;
+	private acc: Vec2D;
+
+	//Attributes
+	private age: number = 0;
 	private angle: number = 0;
 	private angleVel: number;
-	private sprite: HTMLImageElement;
 	private size: number;
+	private dampFactor: number;
+
+	private sprite: HTMLImageElement;
 	private cs: number = 0;
 	private initialOpacity: number;
 	private opacity: number;
@@ -31,9 +37,12 @@ export default class Entity {
 		this.lifeSpan = data.lifeSpan || 10;
 		this.pos = data.pos;
 		this.vel = data.vel;
+		this.acc = { x: 0, y: 0 };
+
 		this.sprite =
 			Entity.sprites[Math.floor(Math.random() * Entity.sprites.length)];
 		this.size = data.size;
+		this.dampFactor = this.size * 0.1;
 		this.cs = this.size / 2;
 		this.angleVel = data.angleVel;
 		this.opacity = this.initialOpacity = data.startOpacity;
@@ -47,6 +56,12 @@ export default class Entity {
 
 	isDead() {
 		return this.age >= this.lifeSpan;
+	}
+
+	applyForce(force: Vec2D) {
+		// F = ma => a = F/m
+		this.acc.x += force.x / this.dampFactor;
+		this.acc.y += force.y / this.dampFactor;
 	}
 
 	update(dt: number) {
@@ -65,14 +80,24 @@ export default class Entity {
 			);
 		}
 
+		// Update velocity (v = u + at)
+		this.vel.x += this.acc.x * dt;
+		this.vel.y += this.acc.y * dt;
+		console.log(this.vel);
+
+		clampVec(this.vel, -50, 50);
+
+		// Update position
 		this.pos.x += this.vel.x * dt;
 		this.pos.y += this.vel.y * dt;
+
+		// Reset acceleration
+		this.acc.x = 0;
+		this.acc.y = 0;
 
 		this.angle += this.angleVel * dt;
 		this.age += dt;
 	}
-
-	addForce() {}
 
 	draw(ctx: CanvasRenderingContext2D) {
 		ctx.beginPath();

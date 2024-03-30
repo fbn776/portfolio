@@ -10,8 +10,13 @@ export function vecLen(vec: Vec2D) {
 
 export function normalizeVec(vec: Vec2D) {
 	const len = vecLen(vec);
-	vec.x /= len;
-	vec.y /= len;
+	vec.x /= (len || 1);
+	vec.y /= (len || 1);
+}
+
+export function clampVec(vec: Vec2D, min: number, max: number) {
+	vec.x = Math.min(max, Math.max(min, vec.x));
+	vec.y = Math.min(max, Math.max(min, vec.y));
 }
 
 export function mapValue(

@@ -1,9 +1,19 @@
-import { RefObject, useEffect} from "react";
+import { RefObject, useEffect } from "react";
 import Entity from "./Entity";
 import { generateEntity } from "./generateEntity";
+import { normalizeVec } from "@/app/lib/utils";
 
 export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 	useEffect(() => {
+		const scrollData = {
+			x_: 0,
+			y_: 0,
+			x: 0,
+			y: 0,
+			dx: 0,
+			dy: 0,
+		};
+
 		const spritesArr: HTMLImageElement[] = [];
 
 		for (let i = 0; i < 12; i++) {
@@ -35,15 +45,39 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			canvas.height = height = window.innerHeight;
 		};
 
+		const getScrollData = () => {
+			scrollData.x_ = scrollData.x;
+			scrollData.y_ = scrollData.y;
+			scrollData.x = window.scrollX;
+			scrollData.y = window.scrollY;
+
+			scrollData.dy = scrollData.y - scrollData.y_;
+			scrollData.dx = scrollData.x - scrollData.x_;
+
+			const force = {
+				x: scrollData.dx * 30,
+				y: scrollData.dy * 30,
+			};
+
+			for (let entity of entityArr) {
+				entity.applyForce(force);
+			}
+
+			scrollData.dx = 0;
+			scrollData.dy = 0;
+		};
+
 		window.addEventListener("resize", resize);
+
+		window.addEventListener("scroll", getScrollData);
 
 		/**For some reason, `width` doesn't reflect the actual value at the 1st run each time. It's more like half the screen's width (donno why).
 		 * And this works, again not really sure why.
 		 */
 		setTimeout(resize, 0);
 
-		// Initially 
-		for(let i = 0; i < 4; i++) {
+		// Initially
+		for (let i = 0; i < 4; i++) {
 			generateEntity(width, height, entityArr);
 		}
 
@@ -55,7 +89,8 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			const dt = (now - lastTime) / 1000.0;
 			ctx.clearRect(0, 0, width, height);
 
-			if (Math.random() < 0.1 && entityArr.length < 15) generateEntity(width, height, entityArr);
+			if (Math.random() < 0.05 && entityArr.length < 10)
+				generateEntity(width, height, entityArr);
 
 			for (let i = 0; i < entityArr.length; i++) {
 				const entity = entityArr[i];
@@ -74,8 +109,10 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 
 		draw();
 
+		// Clean up the useEffect
 		return () => {
 			canvas.removeEventListener("resize", resize);
+			window.removeEventListener("scroll", getScrollData);
 			cancelAnimationFrame(drawID);
 		};
 	}, []);
