@@ -3,8 +3,6 @@ interface Skill {
 	name: string;
 	/**Skill icon src */
 	src: string;
-	/**Link to show when clicked */
-	link?: string;
 }
 
 interface SkillCategory {

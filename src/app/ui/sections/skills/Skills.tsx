@@ -2,8 +2,6 @@ import Header from "../../components/Header";
 import SkillsData from "@/app/data/skill/SkillsData";
 import "./style.css";
 import Image from "next/image";
-import clsx from "clsx";
-import { headerFont } from "../../fonts";
 
 export default function Skills() {
 	return (
@@ -22,7 +20,8 @@ export default function Skills() {
 									return (
 										<div
 											key={j}
-											className=" bg-primary bg-opacity-10 p-4 rounded-md"
+											className="card-flip bg-primary bg-opacity-10 p-4 rounded-md"
+											data-name={skill.name}
 										>
 											<div className="w-[50px] h-[50px] relative">
 												<Image fill={true} src={skill.src} alt={skill.name} />

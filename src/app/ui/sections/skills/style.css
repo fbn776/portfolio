@@ -4,3 +4,32 @@
 	backdrop-filter: blur(10px);
 	border: 1px solid rgba(74, 74, 98, 0.25);
 }
+
+.card-flip {
+	position: relative;
+	overflow: hidden;
+}
+
+.card-flip:hover {
+	@apply bg-opacity-0
+}
+
+.card-flip:hover::after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.card-flip::after {
+	content: attr(data-name);
+	@apply bg-primary;
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: small;
+	opacity: 0;
+	transform: scale(0);
+	transition: opacity 0.2s, transform 0.2s, border-radius 0.5s 0.2s;
+}
