@@ -63,14 +63,14 @@ export default function About() {
 					</div>
 
 					<div className="flex justify-between items-center mt-5">
-						<div className="flex gap-5">
+						<div className="flex gap-5 max-sm:gap-3">
 							<IconBrandLinkedin />
 							<IconBrandGithub />
 							<IconBrandX />
 							<IconBrandInstagram />
 						</div>
 
-						<button className="bg-primary rounded-lg px-5 py-3">
+						<button className="bg-primary rounded-lg px-5 py-3 max-sm:py-2">
 							Read More
 						</button>
 					</div>
