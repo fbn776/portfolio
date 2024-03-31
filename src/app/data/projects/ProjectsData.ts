@@ -1,5 +1,5 @@
-interface Project {
-	
+interface Projects {
+
 }
 
 const ProjectsData: Projects = [
