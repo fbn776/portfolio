@@ -2,29 +2,34 @@ import { Vec2D } from "@/app/lib/types";
 import { clampVec, mapValue } from "@/app/lib/utils";
 
 export default class Entity {
+	static sprites: HTMLImageElement[] = [];
+
 	// Vectors
 	private pos: Vec2D;
 	private vel: Vec2D;
 	private acc: Vec2D;
 
 	//Attributes
-	private age: number = 0;
 	private angle: number = 0;
 	private angleVel: number;
 	private size: number;
 	private dampFactor: number;
 
 	private sprite: HTMLImageElement;
-	private cs: number = 0;
 	private initialOpacity: number;
 	private opacity: number;
+
+	// Age -> 0---strong life---weak life---lifeSpan
+	private age: number = 0;
 	private lifeSpan: number = 10;
+	// Once age surpasses strongLife, the entity starts to scale up.
+	private strongLife;
 	// Once age surpasses weakLife, the entity starts to fade.
 	private weakLife: number;
 	private scale;
-	private strongLife;
 
-	static sprites: HTMLImageElement[] = [];
+	// Constants
+	private halfSize: number = 0;
 
 	constructor(data: {
 		pos: Vec2D;
@@ -43,11 +48,11 @@ export default class Entity {
 			Entity.sprites[Math.floor(Math.random() * Entity.sprites.length)];
 		this.size = data.size;
 		this.dampFactor = this.size * 0.1;
-		this.cs = this.size / 2;
+		this.halfSize = this.size / 2;
 		this.angleVel = data.angleVel;
 		this.opacity = this.initialOpacity = data.startOpacity;
 
-		this.scale = 0;
+		this.scale = 1;
 		// When the object should start to fade
 		this.weakLife = this.lifeSpan * 0.8;
 		// When the object should reach max scale
@@ -65,10 +70,15 @@ export default class Entity {
 	}
 
 	update(dt: number) {
-		this.scale =
+		// this.scale =
+		// 	this.age <= this.strongLife
+		// 		? mapValue(this.age, 0, this.strongLife, 0, 1)
+		// 		: 1;
+
+		this.opacity =
 			this.age <= this.strongLife
-				? mapValue(this.age, 0, this.strongLife, 0, 1)
-				: 1;
+				? mapValue(this.age, 0, this.strongLife, 0, this.initialOpacity)
+				: this.initialOpacity;
 
 		if (this.age >= this.weakLife) {
 			this.opacity = mapValue(
@@ -83,7 +93,6 @@ export default class Entity {
 		// Update velocity (v = u + at)
 		this.vel.x += this.acc.x * dt;
 		this.vel.y += this.acc.y * dt;
-		console.log(this.vel);
 
 		clampVec(this.vel, -50, 50);
 
@@ -107,9 +116,25 @@ export default class Entity {
 		ctx.translate(this.pos.x, this.pos.y);
 		ctx.rotate(this.angle);
 		ctx.scale(this.scale, this.scale);
-		ctx.drawImage(this.sprite, -this.cs, -this.cs, this.size, this.size);
+
+		ctx.fillStyle = "white";
+		ctx.arc(0, 0, 5, 0, Math.PI * 2);
+		ctx.fill();
+
+		ctx.drawImage(
+			this.sprite,
+			-this.halfSize,
+			-this.halfSize,
+			this.size,
+			this.size
+		);
 
 		ctx.globalAlpha = 1;
+
+		ctx.strokeStyle = "red";
+		ctx.rect(-this.size / 2, -this.size / 2, this.size, this.size);
+		ctx.stroke();
+
 		ctx.restore();
 		ctx.closePath();
 	}

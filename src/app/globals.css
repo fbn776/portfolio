@@ -176,3 +176,7 @@ body {
 .icon-link:hover {
 	@apply text-primary;
 }
+
+section {
+	opacity: 0;
+}
