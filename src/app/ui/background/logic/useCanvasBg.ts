@@ -63,8 +63,6 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			force.x *= velMag;
 			force.y *= velMag;
 
-			// console.log(force, velMag);
-
 			for (let entity of entityArr) {
 				entity.applyForce(force);
 			}

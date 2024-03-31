@@ -47,7 +47,6 @@ export default class Entity {
 			Entity.sprites[Math.floor(Math.random() * Entity.sprites.length)];
 		this.size = data.size;
 		this.dampFactor = this.size * 0.005;
-		console.log(this.dampFactor);
 		this.halfSize = this.size / 2;
 		this.angleVel = data.angleVel;
 		this.opacity = this.initialOpacity = data.startOpacity;
