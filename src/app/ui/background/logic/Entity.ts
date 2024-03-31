@@ -26,7 +26,6 @@ export default class Entity {
 	private strongLife;
 	// Once age surpasses weakLife, the entity starts to fade.
 	private weakLife: number;
-	private scale;
 
 	// Constants
 	private halfSize: number = 0;
@@ -52,7 +51,6 @@ export default class Entity {
 		this.angleVel = data.angleVel;
 		this.opacity = this.initialOpacity = data.startOpacity;
 
-		this.scale = 1;
 		// When the object should start to fade
 		this.weakLife = this.lifeSpan * 0.8;
 		// When the object should reach max scale
@@ -70,11 +68,6 @@ export default class Entity {
 	}
 
 	update(dt: number) {
-		// this.scale =
-		// 	this.age <= this.strongLife
-		// 		? mapValue(this.age, 0, this.strongLife, 0, 1)
-		// 		: 1;
-
 		this.opacity =
 			this.age <= this.strongLife
 				? mapValue(this.age, 0, this.strongLife, 0, this.initialOpacity)
@@ -115,11 +108,6 @@ export default class Entity {
 
 		ctx.translate(this.pos.x, this.pos.y);
 		ctx.rotate(this.angle);
-		ctx.scale(this.scale, this.scale);
-
-		ctx.fillStyle = "white";
-		ctx.arc(0, 0, 5, 0, Math.PI * 2);
-		ctx.fill();
 
 		ctx.drawImage(
 			this.sprite,
