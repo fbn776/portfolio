@@ -1,7 +1,7 @@
 import { RefObject, useEffect } from "react";
 import Entity from "./Entity";
 import { generateEntity } from "./generateEntity";
-import { normalizeVec } from "@/app/lib/utils";
+import { clampVec, mapValue, normalizeVec } from "@/app/lib/utils";
 
 export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 	useEffect(() => {
@@ -10,8 +10,6 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			y_: 0,
 			x: 0,
 			y: 0,
-			dx: 0,
-			dy: 0,
 		};
 
 		const spritesArr: HTMLImageElement[] = [];
@@ -51,20 +49,25 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			scrollData.x = window.scrollX;
 			scrollData.y = window.scrollY;
 
-			scrollData.dy = scrollData.y - scrollData.y_;
-			scrollData.dx = scrollData.x - scrollData.x_;
-
 			const force = {
-				x: scrollData.dx * 30,
-				y: scrollData.dy * 30,
+				x: (window.scrollX - scrollData.x_) * 30,
+				y: (window.scrollY - scrollData.y_) * 30,
 			};
+
+			clampVec(force, -500, 500);
+
+			const velMag = Math.abs(mapValue(force.y, -500, 500, -100, 100));
+
+			normalizeVec(force);
+
+			force.x *= velMag;
+			force.y *= velMag;
+
+			// console.log(force, velMag);
 
 			for (let entity of entityArr) {
 				entity.applyForce(force);
 			}
-
-			scrollData.dx = 0;
-			scrollData.dy = 0;
 		};
 
 		window.addEventListener("resize", resize);
@@ -75,11 +78,6 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 		 * And this works, again not really sure why.
 		 */
 		setTimeout(resize, 0);
-
-		// Initially
-		for (let i = 0; i < 4; i++) {
-			generateEntity(width, height, entityArr);
-		}
 
 		let drawID: number;
 		let now;

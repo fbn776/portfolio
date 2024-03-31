@@ -46,7 +46,8 @@ export default class Entity {
 		this.sprite =
 			Entity.sprites[Math.floor(Math.random() * Entity.sprites.length)];
 		this.size = data.size;
-		this.dampFactor = this.size * 0.1;
+		this.dampFactor = this.size * 0.005;
+		console.log(this.dampFactor);
 		this.halfSize = this.size / 2;
 		this.angleVel = data.angleVel;
 		this.opacity = this.initialOpacity = data.startOpacity;
@@ -58,6 +59,14 @@ export default class Entity {
 	}
 
 	isDead() {
+		if (
+			this.pos.x + this.halfSize < 0 ||
+			this.pos.x - this.halfSize > window.innerWidth ||
+			this.pos.y + this.halfSize < 0 ||
+			this.pos.y - this.halfSize > window.innerHeight
+		)
+			return true;
+
 		return this.age >= this.lifeSpan;
 	}
 
@@ -87,7 +96,7 @@ export default class Entity {
 		this.vel.x += this.acc.x * dt;
 		this.vel.y += this.acc.y * dt;
 
-		clampVec(this.vel, -50, 50);
+		clampVec(this.vel, -100, 100);
 
 		// Update position
 		this.pos.x += this.vel.x * dt;
@@ -119,9 +128,9 @@ export default class Entity {
 
 		ctx.globalAlpha = 1;
 
-		ctx.strokeStyle = "red";
-		ctx.rect(-this.size / 2, -this.size / 2, this.size, this.size);
-		ctx.stroke();
+		// ctx.fillStyle = "red";
+		// ctx.arc(0, 0, 10, 0, Math.PI * 2);
+		// ctx.fill();
 
 		ctx.restore();
 		ctx.closePath();

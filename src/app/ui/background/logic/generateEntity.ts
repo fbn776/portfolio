@@ -27,13 +27,14 @@ export function generateEntity(
 	const startOpacity = mapValue(size, minSize, maxSize, 0.5, 1);
 	const angleVel = mapValue(size, minSize, maxSize, 1, 0.01);
 	const lifeSpan = Math.floor(randNumber(15, 30));
-	const velMag = Math.floor(randNumber(4, 15));
+	const velMag = Math.floor(randNumber(10, 30));
 
 	const leftExtreme = 0,
 		rightExtreme = width,
 		topExtreme = 0,
 		bottomExtreme = height;
 
+	// Gets a random position in the screen
 	const pos = getRandPosInRect(
 		leftExtreme,
 		rightExtreme,
@@ -41,9 +42,10 @@ export function generateEntity(
 		bottomExtreme
 	);
 
-	const targetLeft = 0.1 * width,
-		targetTop = 0.1 * height;
+	const targetLeft = 0, //0.1 * width,
+		targetTop = 0; //0.1 * height;
 
+	// Gets a random position in a sub rectangle of the screen RECT(targetLeft, targetTop, width - targetLeft, height - targetTop)
 	const targetPos = getRandPosInRect(
 		targetLeft,
 		width - targetLeft,
@@ -51,6 +53,7 @@ export function generateEntity(
 		height - targetTop
 	);
 
+	// Gets vector pointing from pos to targetPos
 	const diff = {
 		x: targetPos.x - pos.x,
 		y: targetPos.y - pos.y,
