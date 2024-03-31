@@ -5,13 +5,13 @@ export function randNumber(min: number, max: number): number {
 }
 
 export function vecLen(vec: Vec2D) {
-	return Math.sqrt(vec.x * vec.x - vec.y * vec.y);
+	return Math.sqrt(vec.x * vec.x + vec.y * vec.y);
 }
 
 export function normalizeVec(vec: Vec2D) {
 	const len = vecLen(vec);
-	vec.x /= (len || 1);
-	vec.y /= (len || 1);
+	vec.x /= len;
+	vec.y /= len;
 }
 
 export function clampVec(vec: Vec2D, min: number, max: number) {

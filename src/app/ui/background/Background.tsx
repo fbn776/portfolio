@@ -6,16 +6,10 @@ import useCanvasBg from "./logic/useCanvasBg";
 function Background() {
 	const canvasElm = useRef<HTMLCanvasElement>(null);
 
-
 	useCanvasBg(canvasElm);
 
 	return (
-		<>
-			<canvas
-				className="fixed inset-0 -z-50 opacity-20"
-				ref={canvasElm}
-			></canvas>
-		</>
+		<canvas className="fixed inset-0 -z-50 opacity-20" ref={canvasElm}></canvas>
 	);
 }
 
