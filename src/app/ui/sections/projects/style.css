@@ -1,13 +1,28 @@
 .project-cont {
-	@apply w-full flex relative h-[400px] items-center mb-10 max-lg:rounded-sm max-lg:overflow-hidden max-lg:h-fit;
+	@apply w-full max-w-[1300px] flex relative h-[400px] items-center mb-10 max-lg:flex-col-reverse max-lg:h-fit;
 }
 
 .project-cont .left-section {
-	@apply w-[55%] h-full flex flex-col text-white relative z-10 justify-center max-lg:w-full max-lg:p-4 max-lg:bg-black max-lg:bg-opacity-70;
+	@apply w-[55%] h-full flex flex-col text-white relative z-10 justify-center max-lg:w-full;
 }
 
 .project-cont .right-section {
-	@apply aspect-[16/9] absolute w-[50%] z-0 max-h-[400px] max-lg:max-h-fit max-lg:w-full max-lg:left-0 max-lg:aspect-auto max-lg:h-full;
+	border: 1px solid rgba(74, 74, 98, 0.25);
+	@apply aspect-[16/9] absolute w-[50%] z-0 max-h-[400px] max-lg:relative max-lg:w-full max-lg:border-b-0;
+}
+
+.project-cont .right-section .right-overlay {
+	@apply lg:hidden absolute inset-0 bg-black bg-opacity-80 text-white flex flex-col justify-between p-4;
+}
+
+.project-cont .description {
+	border: 0px solid rgba(74, 74, 98, 0.25);
+	@apply max-lg:border-x-[1px] max-lg:border-b-[1px];
+}
+
+.project-cont .glass-border {
+	border: 1px solid rgba(74, 74, 98, 0.25);
+	@apply lg:border-0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -36,3 +51,47 @@
 		justify-content: flex-end;
 	}
 }
+
+
+/*
+.project-cont {
+	@apply w-full max-w-[1300px] flex relative h-[400px] items-center mb-10 max-lg:rounded-sm max-lg:overflow-hidden max-lg:h-fit;
+}
+
+.project-cont .left-section {
+	@apply w-[55%] h-full flex flex-col text-white relative z-10 justify-center max-lg:w-full max-lg:p-4 max-lg:bg-black max-lg:bg-opacity-60;
+}
+
+.project-cont .right-section {
+	@apply aspect-[16/9] absolute w-[50%] z-0 max-h-[400px] max-lg:max-h-fit max-lg:w-full max-lg:left-0 max-lg:aspect-auto max-lg:h-full;
+
+	border: 1px solid rgba(74, 74, 98, 0.25);
+}
+
+@media screen and (min-width: 1024px) {
+	.project-cont[data-align="left"] .right-section {
+		left: 50%;
+	}
+
+	.project-cont[data-align="right"] .right-section {
+		left: 0%;
+	}
+
+	.project-cont[data-align="right"] .left-section {
+		position: absolute;
+		left: 45%;
+	}
+
+	.project-cont[data-align="right"] .left-section * {
+		text-align: right;
+	}
+
+	.project-cont[data-align="right"] .left-section .tech-stack-cont {
+		justify-content: flex-end;
+	}
+
+	.project-cont[data-align="right"] .left-section .links-cont {
+		justify-content: flex-end;
+	}
+}
+*/

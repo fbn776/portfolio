@@ -1,59 +1,120 @@
-import ProjectsData from "@/app/data/projects/FeaturedProjectsData";
+import ProjectsData, {
+	IProjects,
+} from "@/app/data/projects/FeaturedProjectsData";
 import Header from "../../components/Header";
 import Link from "next/link";
 import Image from "next/image";
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
-import "./style.css"
+import "./style.css";
+
+function Bubbles({
+	project,
+	className,
+}: {
+	project: IProjects;
+	className?: string;
+}) {
+	return (
+		<div className={className || ""}>
+			<div className="tech-stack-cont w-full flex gap-4 text-sm opacity-80 mt-4">
+				{project.technologies.map((tech, j) => {
+					return <span key={j}>{tech}</span>;
+				})}
+			</div>
+			<div className="flex gap-4 mt-4 links-cont w-full">
+				{project.github && (
+					<Link href={project.github} target="_blank" rel="noreferrer">
+						<IconBrandGithub />
+					</Link>
+				)}
+				{project.website && (
+					<Link href={project.website} target="_blank" rel="noreferrer">
+						<IconExternalLink />
+					</Link>
+				)}
+			</div>
+		</div>
+	);
+}
 
 export default function Projects() {
 	return (
 		<section className="main-section" id="projects">
 			<Header text="Projects" textSize="text-6xl" />
 
-			{ProjectsData.map((project, i) => {
-				return (
-					<div
-						className="project-cont"
-						data-align={i % 2 ? "right" : "left"}
-						key={i}
-					>
-						<div className="left-section">
-							<h2 className="text-primary text-xs font-semibold mb-1">
-								Featured Project
-							</h2>
-							<h1 className="text-3xl font-semibold tracking-wider mb-4">
-								{project.title}
-							</h1>
+			<div className="flex flex-col items-center">
+				{ProjectsData.map((project, i) => {
+					return (
+						<div
+							className="project-cont"
+							data-align={i % 2 ? "right" : "left"}
+							key={i}
+						>
+							<div className="left-section">
+								<h2 className="text-primary text-xs font-semibold mb-1 max-lg:hidden">
+									Featured Project
+								</h2>
+								<h1 className="text-3xl font-semibold tracking-wider mb-4 max-lg:hidden">
+									{project.title}
+								</h1>
 
-							<p className="bg-darkBG p-5 rounded shadow text-pretty opacity-90">
-								{project.description}
-							</p>
-
-							<div className="tech-stack-cont w-full flex gap-4 text-sm opacity-80 mt-4">
-								{project.technologies.map((tech, j) => {
-									return <span key={j}>{tech}</span>;
-								})}
+								<p className="bg-darkBG p-5 lg:rounded-md max-lg:rounded-b-md shadow text-pretty opacity-90 max-lg:text-sm description">
+									{project.description}
+								</p>
+								<div className="tech-stack-cont w-full flex gap-4 text-sm opacity-80 mt-4 max-lg:hidden">
+									{project.technologies.map((tech, j) => {
+										return <span key={j}>{tech}</span>;
+									})}
+								</div>
+								<div className="flex gap-4 mt-4 links-cont w-full max-lg:justify-end">
+									{project.github && (
+										<Link
+											href={project.github}
+											target="_blank"
+											rel="noreferrer"
+											className="max-lg:p-2 max-lg:bg-darkBG glass-border rounded-full"
+										>
+											<IconBrandGithub />
+										</Link>
+									)}
+									{project.website && (
+										<Link
+											href={project.website}
+											target="_blank"
+											rel="noreferrer"
+											className="max-lg:p-2 max-lg:bg-darkBG glass-border rounded-full"
+										>
+											<IconExternalLink />
+										</Link>
+									)}
+								</div>
 							</div>
-
-							<div className="flex gap-4 mt-4 links-cont w-full">
-								{project.github && (
-									<Link href={project.github} target="_blank" rel="noreferrer">
-										<IconBrandGithub />
-									</Link>
-								)}
-								{project.website && (
-									<Link href={project.website} target="_blank" rel="noreferrer">
-										<IconExternalLink />
-									</Link>
-								)}
+							<div className="right-section overflow-hidden lg:rounded-md max-lg:rounded-t-md lg:shadow-2xl">
+								<Image
+									src={project.screenShotSrc}
+									alt={project.title}
+									fill={true}
+								/>
+								<div className="right-overlay">
+									<div>
+										<h2 className="text-primary text-xs font-semibold mb-1">
+											Featured Project
+										</h2>
+										<h1 className="text-3xl font-semibold tracking-wider mb-4">
+											{project.title}
+										</h1>
+									</div>
+									<div className="tech-stack-cont w-full flex justify-end flex-wrap text-xs gap-3 opacity-80 mt-4">
+										{project.technologies.map((tech, j) => {
+											return <span key={j}>{tech}</span>;
+										})}
+									</div>
+								</div>
 							</div>
 						</div>
-						<div className="right-section overflow-hidden rounded shadow-lg">
-							<Image src={project.screenShotSrc} alt={project.title} fill={true}/>
-						</div>
-					</div>
-				);
-			})}
+					);
+				})}
+			</div>
 		</section>
 	);
 }

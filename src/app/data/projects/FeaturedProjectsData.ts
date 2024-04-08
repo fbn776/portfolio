@@ -1,4 +1,4 @@
-interface Projects {
+export interface IProjects {
 	title: string;
 	description: string;
 	screenShotSrc: string;
@@ -8,7 +8,7 @@ interface Projects {
 	website?: string;
 }
 
-const ProjectsData: Projects[] = [
+const ProjectsData: IProjects[] = [
 	{
 		title: "UniMate",
 		description:
