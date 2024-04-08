@@ -36,11 +36,11 @@ html {
 
 /* Text Selection */
 *::selection {
-	@apply bg-primary;
+	@apply bg-primary bg-opacity-35;
 	color: white;
 }
 *::-moz-selection {
-	@apply bg-primary;
+	@apply bg-primary bg-opacity-35;
 	color: white;
 }
 

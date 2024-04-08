@@ -1,0 +1,15 @@
+
+.border-sep {
+	position: relative;
+}
+
+.border-sep::after {
+	content: '';
+	position: absolute;
+	right: -1.5px;
+	top: 10px;
+	bottom: 10px;
+	width: 3px;
+	height: 100%;
+	@apply bg-primary bg-opacity-70;
+}

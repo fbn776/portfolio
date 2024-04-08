@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@data/*": ["./src/app/data/*"]
+      "@data/*": ["./src/app/data/*"],
+      "@pages/*": ["./src/app/(subpages)/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "dev/svg-to-base64/convert.js"],
