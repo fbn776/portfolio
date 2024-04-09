@@ -10,7 +10,7 @@
 	width: 3px;
 	top: 8%;
 	height: 3%;
-	@apply bg-primary bg-opacity-50 rounded-xl;
+	@apply bg-primary bg-opacity-50 rounded-xl max-lg:hidden;
 }
 
 .border-sep::after {
@@ -21,7 +21,7 @@
 	top: 13%;
 	bottom: 10%;
 	height: calc(100%-13%-10%);
-	@apply bg-primary bg-opacity-50 rounded-xl;
+	@apply bg-primary bg-opacity-50 rounded-xl max-lg:hidden;
 }
 
 .glass-bg {
@@ -30,7 +30,7 @@
 	backdrop-filter: blur(10px);
 	border: 1px solid rgba(74, 74, 98, 0.25);
 
-	transition: background-color 0.3s, transform 0.3s;
+	transition: background-color 0.2s, transform 0.2s;
 }
 
 .glass-bg:hover {
