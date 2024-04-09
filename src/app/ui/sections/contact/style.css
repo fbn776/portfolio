@@ -3,13 +3,37 @@
 	position: relative;
 }
 
+.border-sep::before {
+	content: '';
+	position: absolute;
+	right: -1.5px;
+	width: 3px;
+	top: 8%;
+	height: 3%;
+	@apply bg-primary bg-opacity-50 rounded-xl;
+}
+
 .border-sep::after {
 	content: '';
 	position: absolute;
 	right: -1.5px;
-	top: 10px;
-	bottom: 10px;
 	width: 3px;
-	height: 100%;
-	@apply bg-primary bg-opacity-70;
+	top: 13%;
+	bottom: 10%;
+	height: calc(100%-13%-10%);
+	@apply bg-primary bg-opacity-50 rounded-xl;
+}
+
+.glass-bg {
+	background: rgba(7, 7, 24, 0.5);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(74, 74, 98, 0.25);
+
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+.glass-bg:hover {
+	@apply bg-primary bg-opacity-55;
+	transform: scale(1.1);
 }

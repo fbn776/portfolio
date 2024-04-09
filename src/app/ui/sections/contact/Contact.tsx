@@ -1,7 +1,24 @@
 import "./style.css"
 import Header from "../../components/Header";
-import { IconBrandInstagram, IconBrandX, IconCaretRight, IconCornerDownRight } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconBrandX, IconCaretRight, IconError404 } from "@tabler/icons-react";
 import Link from "next/link";
+import { SocialLinks } from "@/app/data/Links";
+
+const getBrandIcon = (name: string) => {
+	switch(name) {
+		case "instagram":
+			return <IconBrandInstagram size={40} />
+		case "github":
+			return <IconBrandGithub size={40} />
+		case "linkedin":
+			return <IconBrandLinkedin size={40} />;
+		case "twitter":
+			return <IconBrandX size={40} />
+		default:
+			return <IconError404 size={40} />;
+	}
+}
+
 
 export default function Contact() {
 	return (
@@ -17,40 +34,30 @@ export default function Contact() {
 			<div className="w-full flex justify-stretch mt-10 max-lg:flex-col">
 				<div className="w-full h-full border-sep ">
 					<h2 className="text-center text-4xl">Socials</h2>
-
-					<Link href="#" className="w-full flex p-4 items-center gap-5">
-						<div className="size-[60px] bg-primary rounded-full flex items-center justify-center">
-							<IconBrandInstagram size={40} />
-						</div>
-						<div className="flex flex-col gap-1">
-							<label className="font-semibold">Instagram</label>
-							<span className="text-xs opacity-80 flex items-center">
-								<IconCaretRight size={15} />
-								@fbn776
-							</span>
-							<span className="text-xs opacity-80 flex">
-								<IconCaretRight size={15} />
-								https://Instagram.com/fbn776
-							</span>
-						</div>
-					</Link>
-
-					<Link href="#" className="w-full flex p-4 items-center gap-5">
-						<div className="size-[60px] bg-primary rounded-full flex items-center justify-center">
-							<IconBrandX size={40} />
-						</div>
-						<div className="flex flex-col gap-1">
-							<label className="font-semibold">Twitter(X)</label>
-							<span className="text-xs opacity-80 flex items-center">
-								<IconCaretRight size={15} />
-								@fbn776
-							</span>
-							<span className="text-xs opacity-80 flex">
-								<IconCaretRight size={15} />
-								https://twitter.com/fbn776
-							</span>
-						</div>
-					</Link>
+					<div >
+						{SocialLinks.map((item, index) => {
+							return (
+								<Link
+									key={index}
+									href={item.link}
+									className="w-[80%] m-auto flex p-4 items-center gap-5 my-5 bg-red-200 glass-bg rounded-lg shadow-lg"
+								>
+									<div className="size-[60px] bg-primary rounded-full flex items-center justify-center">
+										{getBrandIcon(item.name)}
+									</div>
+									<div className="flex flex-col gap-1">
+										<label className="capitalize tracking-wide">
+											{item.name}
+										</label>
+										<span className="text-xs opacity-90 flex items-center">
+											@{item.username}
+										</span>
+										<span className="text-xs opacity-60 flex">{item.link}</span>
+									</div>
+								</Link>
+							);
+						})}
+					</div>
 				</div>
 				<div className="w-full h-full">
 					<h2 className="text-center text-4xl">Connect</h2>

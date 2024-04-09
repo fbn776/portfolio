@@ -10,7 +10,7 @@ import Image from "next/image";
 import Education from "./Education";
 import Experience from "./Experience";
 import Link from "next/link";
-import MyLinks from "@/app/data/about/Links";
+import MyLinks from "@/app/data/Links";
 
 export default function About() {
 	return (
