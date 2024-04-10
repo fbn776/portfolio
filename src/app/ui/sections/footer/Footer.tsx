@@ -37,7 +37,7 @@ export default function Footer() {
 				</div>
 			</div>
 			<div className="flex text-sm flex-col justify-between items-end max-md:mt-7">
-				<div className="flex gap-4 text-xl max-sm:text-base max-sm:gap-1 max-sm:justify-between max-sm:w-full">
+				<div className="flex gap-4 lg:gap-10 text-xl max-sm:text-base max-sm:gap-1 max-sm:justify-between max-sm:w-full">
 					<Link
 						href="#"
 						className="hover:text-primary hover:opacity-100 opacity-50"

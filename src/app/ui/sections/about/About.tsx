@@ -80,15 +80,15 @@ export default function About() {
 							</Link>
 						</div>
 
-						<button className="bg-primary rounded-lg px-5 py-3 max-sm:py-2">
+						<Link href="#education" className="bg-primary rounded-lg px-5 py-3 max-sm:py-2">
 							Read More
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>
 			<br />
 
-			<Header text="Education" />
+			<Header text="Education" id="education" />
 			<Education />
 			<br />
 
