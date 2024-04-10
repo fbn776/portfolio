@@ -1,10 +1,9 @@
-
 .border-sep {
 	position: relative;
 }
 
 .border-sep::before {
-	content: '';
+	content: "";
 	position: absolute;
 	right: -1.5px;
 	width: 3px;
@@ -14,7 +13,7 @@
 }
 
 .border-sep::after {
-	content: '';
+	content: "";
 	position: absolute;
 	right: -1.5px;
 	width: 3px;
@@ -25,15 +24,33 @@
 }
 
 .glass-bg {
-	background: rgba(7, 7, 24, 0.5);
+	background: rgba(175, 180, 239, 0.15);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
-	border: 1px solid rgba(74, 74, 98, 0.25);
-
+	border: 1px solid rgba(175, 180, 239, 0.075);
 	transition: background-color 0.2s, transform 0.2s;
 }
 
 .glass-bg:hover {
 	@apply bg-primary bg-opacity-55;
 	transform: scale(1.1);
+}
+
+.connect-form {
+	@apply w-full flex flex-col px-[10%];
+}
+
+.connect-form input,
+.connect-form textarea {
+	background: rgba(175, 180, 239, 0.15);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(175, 180, 239, 0.075);
+
+	@apply mb-4 px-5 py-2 text-white rounded-md;
+}
+
+.connect-form textarea {
+	resize: none;
+	min-height: 100px;
 }
