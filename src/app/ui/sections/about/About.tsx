@@ -15,7 +15,7 @@ import MyLinks from "@/app/data/Links";
 export default function About() {
 	return (
 		<section id="about" className="main-section">
-			<Header text="About" textSize="text-6xl" />
+			<Header text="About" className="text-6xl" />
 			<br />
 			<div className="flex gap-20 max-lg:gap-10 max-lg:flex-col">
 				<div className="blob-cont blob-anim-2 relative flex justify-center items-center min-w-[100%] lg:self-center lg:min-w-[450px] lg:max-h-[500px] aspect-square">
@@ -67,16 +67,16 @@ export default function About() {
 					<div className="flex justify-between items-center mt-5">
 						<div className="flex gap-5 max-sm:gap-3">
 							<Link href={MyLinks.linkedin}>
-								<IconBrandLinkedin className="icon-link"/>
+								<IconBrandLinkedin className="icon-link" />
 							</Link>
 							<Link href={MyLinks.github}>
-								<IconBrandGithub className="icon-link"/>
+								<IconBrandGithub className="icon-link" />
 							</Link>
 							<Link href={MyLinks.twitter}>
-								<IconBrandX className="icon-link"/>
+								<IconBrandX className="icon-link" />
 							</Link>
 							<Link href={MyLinks.instagram}>
-								<IconBrandInstagram className="icon-link"/>
+								<IconBrandInstagram className="icon-link" />
 							</Link>
 						</div>
 

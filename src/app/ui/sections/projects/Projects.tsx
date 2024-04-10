@@ -10,7 +10,7 @@ import "./style.css";
 export default function Projects() {
 	return (
 		<section className="main-section" id="projects">
-			<Header text="Projects" textSize="text-6xl" />
+			<Header text="Projects" className="text-6xl" />
 
 			<div className="flex flex-col items-center">
 				{ProjectsData.map((project, i) => {
@@ -44,7 +44,7 @@ export default function Projects() {
 											rel="noreferrer"
 											className="max-lg:p-2 max-lg:bg-darkBG glass-border rounded-full"
 										>
-											<IconBrandGithub className="icon-link"/>
+											<IconBrandGithub className="icon-link" />
 										</Link>
 									)}
 									{project.website && (
@@ -87,8 +87,11 @@ export default function Projects() {
 			</div>
 
 			<div className="text-white">
-				<Header text="More projects!" textSize="text-3xl" />
-				Excited to see more? Click the button below to explore all my other projects!<br/><br/>
+				<Header text="More projects!" className="text-3xl" />
+				Excited to see more? Click the button below to explore all my other
+				projects!
+				<br />
+				<br />
 				<Link href="/projects" className="px-5 py-2 bg-primary rounded mt-24">
 					See More
 				</Link>

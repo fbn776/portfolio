@@ -1,9 +1,9 @@
 export default function Header({
 	text,
-	textSize = "text-4xl",
+	className = "text-4xl",
 }: {
 	text: string;
-	textSize?: string;
+	className?: string;
 }) {
-	return <h1 className={`header ${textSize}`}>{text}</h1>;
+	return <h1 className={`header ${className}`}>{text}</h1>;
 }

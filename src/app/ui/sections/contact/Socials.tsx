@@ -41,7 +41,7 @@ export default function Socials() {
 						@{item.username}
 					</span>
 				</div>
-				<IconExternalLink size={40}/>
+				<IconExternalLink size={40} />
 			</Link>
 		);
 	});

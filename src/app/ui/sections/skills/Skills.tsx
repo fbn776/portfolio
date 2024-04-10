@@ -6,12 +6,15 @@ import Image from "next/image";
 export default function Skills() {
 	return (
 		<section className="main-section" id="skills">
-			<Header text="Skills" textSize="text-6xl" />
+			<Header text="Skills" className="text-6xl" />
 
 			<div className="w-full flex gap-4 items-stretch justify-stretch max-lg:flex-col">
 				{SkillsData.map((category, i) => {
 					return (
-						<div className="h-full glass rounded p-4 flex flex-col gap-6" key={i}>
+						<div
+							className="h-full glass rounded p-4 flex flex-col gap-6"
+							key={i}
+						>
 							<label className="text-center text-white font-semibold bg-primary bg-opacity-20 rounded p-2">
 								{category.name}
 							</label>

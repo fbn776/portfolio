@@ -36,9 +36,6 @@
 	transform: scale(1.1);
 }
 
-.connect-form {
-	@apply w-full flex flex-col px-[10%];
-}
 
 .connect-form input,
 .connect-form textarea {
