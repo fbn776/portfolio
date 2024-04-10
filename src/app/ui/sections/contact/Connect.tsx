@@ -77,7 +77,8 @@ export default function Connect() {
 			>
 				{status === "error" ? (
 					<>
-						Failed <IconX />
+						Failed
+						<IconX />
 					</>
 				) : status === "success" ? (
 					<>

@@ -158,17 +158,6 @@ body {
 	}
 }
 
-.footer {
-	width: 100%;
-	height: 300px;
-	background: rgba(14, 14, 37, 0.5);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	border-top: 4px solid;
-	
-	@apply border-primary border-opacity-65;
-}
-
 .icon-link {
 	transition: color 0.2s;
 }
