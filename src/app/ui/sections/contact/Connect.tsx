@@ -1,70 +1,99 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useRef, useState } from "react";
 import Loader from "../../components/loader/Loader";
+import { IconChecks, IconHourglassEmpty, IconX } from "@tabler/icons-react";
 
-let x = 0;
+//100s
+const timeout = 100000;
 export default function Connect() {
-	const [pending, setPending] = useState(false);
-	const [status, setStatus] = useState<null | 'error' | 'success'>(null);
+	const lastTime = useRef(0);
+	const [status, setStatus] = useState<
+		null | "error" | "success" | "timeout" | "pending"
+	>(null);
 
-	const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+	const sendEmail = useCallback((e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setPending(true);
-		setStatus(null);
 
-		if (x % 2 == 0) {
+		if (Date.now() - lastTime.current < timeout) {
+			setStatus("timeout");
 			setTimeout(() => {
-				setPending(false);
-				setStatus('error');
-				x++;
-			}, 3000);
-		} else {
-			setTimeout(() => {
-				setPending(false);
-				setStatus('success');
-				x++;
-			}, 3000);
+				setStatus(null);
+			}, timeout);
+			return;
 		}
-		// emailjs
-		// 	.sendForm("service_zgv953o", "template_gcnla4o", e.currentTarget, {
-		// 		publicKey: "jq2517wjjZvbkt2tD",
-		// 	})
-		// 	.then(
-		// 		() => {
-		// 			setPending(false);
-		// 			console.log("Mail Sent");
-		// 		},
-		// 		(error) => {
-		// 			setPending(false);
-		// 			setError(error);
-		// 			console.log("FAILED: ", error);
-		// 		}
-		// 	);
-	};
+
+		setStatus("pending");
+
+		emailjs
+			.sendForm("service_zgv953o", "template_gcnla4o", e.currentTarget, {
+				publicKey: "jq2517wjjZvbkt2tD",
+			})
+			.then(
+				() => {
+					setStatus("success");
+					setTimeout(() => {
+						setStatus(null);
+					}, 2000);
+				},
+				(error) => {
+					setStatus("error");
+					setTimeout(() => {
+						setStatus(null);
+					}, 2000);
+					console.log("FAILED: ", error);
+				}
+			);
+
+		lastTime.current = Date.now();
+	}, []);
+
 	return (
 		<form
 			onSubmit={sendEmail}
 			className="connect-form w-full flex-1 flex flex-col px-[10%] my-5 max-sm:px-0"
 		>
 			<div className="w-full flex flex-col gap-3 flex-1">
-				<label htmlFor="name">Name</label>
-				<input name="name" placeholder="Enter name" type="name" required />
+				<label htmlFor="from_name">Name</label>
+				<input name="from_name" placeholder="Enter name" type="name" required />
 
-				<label htmlFor="email">Email</label>
-				<input name="email" type="email" placeholder="Enter email" required />
+				<label htmlFor="from_email">Email</label>
+				<input
+					name="from_email"
+					type="email"
+					placeholder="Enter email"
+					required
+				/>
 
 				<label htmlFor="message">Message</label>
 				<textarea name="message" placeholder="Enter message" required />
 			</div>
 			<button
-				className={`px-5 py-2 flex justify-center text-base rounded-md bg-primary max-lg:mt-5 hover:scale-105 disabled:hover:scale-1 transition-transform disabled:bg-primaryDisabled ${
-					(status === 'error') && "bg-red-600"
-				}`}
-				disabled={pending}
+				className={`px-5 py-2 flex justify-center gap-2 text-base rounded-md bg-primary max-lg:mt-5 hover:scale-105 disabled:hover:scale-1 transition-transform disabled:bg-primaryDisabled ${
+					status === "error" && "bg-red-600"
+				} ${status === "success" && "bg-green-600"}`}
+				disabled={status === "pending" || status === "timeout"}
 			>
-				{status === 'error' ? 'Failed to sent message' : pending ? <Loader /> : "Send"}
+				{status === "error" ? (
+					<>
+						Failed <IconX />
+					</>
+				) : status === "success" ? (
+					<>
+						Success!
+						<IconChecks />
+					</>
+				) : status === "timeout" ? (
+					<>
+						Please wait
+						<IconHourglassEmpty />
+					</>
+				) : status === "pending" ? (
+					<Loader />
+				) : (
+					"Send"
+				)}
 			</button>
 		</form>
 	);
