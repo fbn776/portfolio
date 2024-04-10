@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@tabler/icons-react": "^2.47.0",
     "clsx": "^2.1.0",
     "next": "14.1.3",
