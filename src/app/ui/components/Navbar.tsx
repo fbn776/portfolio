@@ -23,7 +23,19 @@ export default function Navbar() {
 		}
 		scrollFunc();
 		window.addEventListener("scroll", scrollFunc);
+
+
+		// TODO REMOVE THIS;
+		const toggleTheme = () => {
+			console.log("Changed Theme");
+			document.body.classList.toggle("dark");
+		};
+		window.addEventListener("click", toggleTheme);
+
 		return () => {
+			window.removeEventListener("click", toggleTheme);
+
+			// TODO REMOVE THIS;
 			window.removeEventListener("scroll", scrollFunc);
 		};
 	}, []);
@@ -32,7 +44,7 @@ export default function Navbar() {
 		<>
 			<nav
 				ref={navbar}
-				className={`${textFont.className} navbar fixed z-50 left-0 w-full text-white flex justify-between py-5 items-center main-section`}
+				className={`${textFont.className} navbar fixed z-50 left-0 w-full text-dark dark:text-light flex justify-between py-5 items-center main-section`}
 			>
 				<h1
 					className={`${headerFont.className} text-2xl tracking-wide text-primary`}

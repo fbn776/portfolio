@@ -5,7 +5,7 @@ import Connect from "./Connect";
 
 export default function Contact() {
 	return (
-		<section className="main-section text-white mb-10" id="contact">
+		<section className="main-section text-dark dark:text-light mb-10" id="contact">
 			<Header text="Contact" className="text-6xl" />
 			<p>
 				Interested in collaborating, discussing potential projects, or simply

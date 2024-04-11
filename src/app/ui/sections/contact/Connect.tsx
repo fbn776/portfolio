@@ -7,6 +7,7 @@ import { IconChecks, IconHourglassEmpty, IconX } from "@tabler/icons-react";
 
 //100s
 const timeout = 100000;
+
 export default function Connect() {
 	const lastTime = useRef(0);
 	const [status, setStatus] = useState<
@@ -70,7 +71,7 @@ export default function Connect() {
 				<textarea name="message" placeholder="Enter message" required />
 			</div>
 			<button
-				className={`px-5 py-2 flex justify-center gap-2 text-base rounded-md bg-primary max-lg:mt-5 hover:scale-105 disabled:hover:scale-1 transition-transform disabled:bg-primaryDisabled ${
+				className={`px-5 py-2 flex justify-center text-light gap-2 text-base rounded-md bg-primary max-lg:mt-5 hover:scale-105 disabled:hover:scale-1 transition-transform disabled:bg-primaryDisabled ${
 					status === "error" && "bg-red-600"
 				} ${status === "success" && "bg-green-600"}`}
 				disabled={status === "pending" || status === "timeout"}

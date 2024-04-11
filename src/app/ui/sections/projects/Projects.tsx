@@ -1,6 +1,4 @@
-import ProjectsData, {
-	IProjects,
-} from "@/app/data/projects/FeaturedProjectsData";
+import ProjectsData from "@/app/data/projects/FeaturedProjectsData";
 import Header from "../../components/Header";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,7 +26,7 @@ export default function Projects() {
 									{project.title}
 								</h1>
 
-								<p className="bg-darkBG p-5 lg:rounded-md max-lg:rounded-b-md shadow text-pretty opacity-90 max-lg:text-sm description">
+								<p className="bg-darkBG p-5 text-light lg:rounded-md max-lg:rounded-b-md shadow text-pretty opacity-90 max-lg:text-sm description">
 									{project.description}
 								</p>
 								<div className="tech-stack-cont w-full flex gap-4 text-sm opacity-80 mt-4 max-lg:hidden">
@@ -36,7 +34,7 @@ export default function Projects() {
 										return <span key={j}>{tech}</span>;
 									})}
 								</div>
-								<div className="flex gap-4 mt-4 links-cont w-full max-lg:justify-end">
+								<div className="flex gap-4 mt-4 links-cont w-full max-lg:justify-end max-lg:text-light">
 									{project.github && (
 										<Link
 											href={project.github}
@@ -86,13 +84,12 @@ export default function Projects() {
 				})}
 			</div>
 
-			<div className="text-white">
-				<Header text="More projects!" className="text-3xl" />
+			<div className="text-dark dark:text-light">
 				Excited to see more? Click the button below to explore all my other
 				projects!
 				<br />
 				<br />
-				<Link href="/projects" className="px-5 py-2 bg-primary rounded mt-24">
+				<Link href="/projects" className="px-5 py-2 bg-primary rounded text-light">
 					See More
 				</Link>
 			</div>

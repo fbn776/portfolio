@@ -15,7 +15,7 @@ export default function Skills() {
 							className="h-full glass rounded p-4 flex flex-col gap-6"
 							key={i}
 						>
-							<label className="text-center text-white font-semibold bg-primary bg-opacity-20 rounded p-2">
+							<label className="text-center text-dark dark:text-light font-semibold bg-primary bg-opacity-20 rounded p-2">
 								{category.name}
 							</label>
 							<div className="flex w-full flex-wrap gap-4 justify-center items-center">

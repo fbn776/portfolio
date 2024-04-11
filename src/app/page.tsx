@@ -8,14 +8,14 @@ import Footer from "./ui/sections/footer/Footer";
 
 export default function Home() {
 	return (
-		<main className="overflow-y-auto overflow-x-hidden">
-			<Navbar />
-			<HeroPage />
-			<About />
-			<Skills />
-			<Projects />
-			<Contact />
-			<Footer />
+		<main className="overflow-y-scroll h-full overflow-x-hidden">
+				<Navbar />
+				<HeroPage />
+				<About />
+				<Skills />
+				<Projects />
+				<Contact />
+				<Footer />
 		</main>
 	);
 }

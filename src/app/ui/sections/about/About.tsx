@@ -30,8 +30,8 @@ export default function About() {
 						/>
 					</div>
 				</div>
-				<div className="flex flex-col justify-between text-white">
-					<div className={`${textFont.className} text-white`}>
+				<div className="flex flex-col justify-between text-dark dark:text-light">
+					<div className={`${textFont.className} text-dark dark:text-light`}>
 						<p>
 							Hello there! My name is{" "}
 							<span className="text-primary">Febin Nelson P</span>. I&apos;m
@@ -80,7 +80,10 @@ export default function About() {
 							</Link>
 						</div>
 
-						<Link href="#education" className="bg-primary rounded-lg px-5 py-3 max-sm:py-2">
+						<Link
+							href="#education"
+							className="bg-primary rounded-lg px-5 py-3 max-sm:py-2 text-light"
+						>
 							Read More
 						</Link>
 					</div>

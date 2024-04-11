@@ -49,9 +49,8 @@
 	content: attr(data-title);
 	position: absolute;
 	width: 100px;
-	color: white;
 	top: 12px;
-	@apply font-semibold;
+	@apply font-semibold text-dark dark:text-light;
 }
 
 .timeline[data-align="left"] .container::before {
@@ -83,7 +82,7 @@
 /* The actual content */
 .timeline .content {
 	position: relative;
-	color: white;
+	@apply text-dark dark:text-light;
 }
 
 .timeline[data-align="left"] .content {

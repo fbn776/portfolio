@@ -17,7 +17,8 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #212121;
+	/* background-color: #212121; */
+	@apply bg-lightScroll dark:bg-darkScroll
 }
 
 ::-webkit-scrollbar-thumb {
@@ -36,20 +37,18 @@ html {
 
 /* Text Selection */
 *::selection {
-	@apply bg-primary bg-opacity-35;
-	color: white;
+	@apply bg-primary bg-opacity-35 text-dark dark:text-light;
 }
 
 *::-moz-selection {
-	@apply bg-primary bg-opacity-35;
-	color: white;
+	@apply bg-primary bg-opacity-35 text-dark dark:text-light;
 }
 
 body {
-	@apply bg-dark-bg-gradient;
+	@apply bg-light-bg-gradient dark:bg-dark-bg-gradient;
 	width: 100dvw;
 	height: 100dvh;
-	overflow-x: hidden;
+	/* overflow: hidden; */
 }
 
 .main-section {
@@ -77,7 +76,7 @@ body {
 }
 
 .header {
-	@apply text-white tracking-wide my-10;
+	@apply text-dark dark:text-light tracking-wide my-10;
 	display: flex;
 	align-items: center;
 }
@@ -100,8 +99,7 @@ body {
 }
 
 .navbar.scrolled-state {
-	background-color: rgba(0, 0, 0, 0.6);
-	@apply py-5;
+	@apply py-5 bg-black bg-opacity-60 text-light;
 }
 
 .blob-cont {
