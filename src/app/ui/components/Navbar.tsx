@@ -15,15 +15,16 @@ export default function Navbar() {
 	const navbar = useRef<HTMLElement>(null);
 
 	useEffect(() => {
+		const mainSection = document.querySelector(".main")!;
+
 		function scrollFunc() {
-			if(!navbar.current)
-				return;
+			if (!navbar.current) return;
 
-			navbar.current.classList.toggle('scrolled-state', window.scrollY > 50);
+			navbar.current.classList.toggle("scrolled-state", mainSection.scrollTop > 50);
 		}
-		scrollFunc();
-		window.addEventListener("scroll", scrollFunc);
 
+		scrollFunc();
+		mainSection.addEventListener("scroll", scrollFunc);
 
 		// TODO REMOVE THIS;
 		const toggleTheme = () => {
