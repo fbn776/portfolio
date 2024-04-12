@@ -58,9 +58,22 @@ export default function Navbar() {
 					<Link draggable="false" href="#contact" className="nav-link">
 						Contact
 					</Link>
-					<div onClick={changeTheme} className="cursor-pointer icon-link">
-						{theme === "light" ? <IconMoonFilled /> : <IconSunFilled />}
-					</div>
+					<button onClick={changeTheme} className="cursor-pointer relative w-[24px]">
+						<IconMoonFilled
+							className={`${
+								theme === "light"
+									? "scale-1 translate-y-0"
+									: "scale-0 translate-y-5"
+							} theme-change-icon`}
+						/>
+						<IconSunFilled
+							className={`${
+								theme === "dark"
+									? "scale-1 translate-y-0"
+									: "scale-0 -translate-y-5"
+							} theme-change-icon`}
+						/>
+					</button>
 					<IconCategory2 className="sm:hidden" />
 				</section>
 			</nav>

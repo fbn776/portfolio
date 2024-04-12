@@ -48,7 +48,6 @@ body {
 	@apply bg-light-bg-gradient dark:bg-dark-bg-gradient;
 	width: 100dvw;
 	height: 100dvh;
-	/* overflow: hidden; */
 }
 
 .main-section {
@@ -151,4 +150,10 @@ body {
 
 .icon-link:hover {
 	@apply text-primary;
+}
+
+.theme-change-icon {
+	position: absolute;
+	top: 0;
+	transition: transform 0.3s;
 }
