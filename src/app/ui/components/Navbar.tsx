@@ -8,36 +8,29 @@ import {
 } from "@tabler/icons-react";
 import { textFont, headerFont } from "@/app/ui/fonts";
 import { useEffect, useRef } from "react";
+import useTheme from "@/app/lib/useTheme";
 
-//TODO do this;
 export default function Navbar() {
-	let theme = "dark";
 	const navbar = useRef<HTMLElement>(null);
+	const [theme, changeTheme] = useTheme();
 
 	useEffect(() => {
-		const mainSection = document.querySelector(".main")!;
+		const mainSection = document.querySelector(".main");
 
 		function scrollFunc() {
 			if (!navbar.current) return;
 
-			navbar.current.classList.toggle("scrolled-state", mainSection.scrollTop > 50);
+			navbar.current.classList.toggle(
+				"scrolled-state",
+				(mainSection?.scrollTop || 0) > 50
+			);
 		}
 
 		scrollFunc();
-		mainSection.addEventListener("scroll", scrollFunc);
-
-		// TODO REMOVE THIS;
-		const toggleTheme = () => {
-			console.log("Changed Theme");
-			document.body.classList.toggle("dark");
-		};
-		window.addEventListener("click", toggleTheme);
+		mainSection?.addEventListener("scroll", scrollFunc);
 
 		return () => {
-			window.removeEventListener("click", toggleTheme);
-
-			// TODO REMOVE THIS;
-			window.removeEventListener("scroll", scrollFunc);
+			mainSection?.removeEventListener("scroll", scrollFunc);
 		};
 	}, []);
 
@@ -65,7 +58,9 @@ export default function Navbar() {
 					<Link draggable="false" href="#contact" className="nav-link">
 						Contact
 					</Link>
-					{theme === "light" ? <IconMoonFilled /> : <IconSunFilled />}
+					<div onClick={changeTheme} className="cursor-pointer icon-link">
+						{theme === "light" ? <IconMoonFilled /> : <IconSunFilled />}
+					</div>
 					<IconCategory2 className="sm:hidden" />
 				</section>
 			</nav>
