@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<section className="main-section py-5 footer text-white overflow-hidden flex justify-between max-md:flex-col">
+		<section className="main-section text-dark dark:text-light py-5 footer overflow-hidden flex justify-between max-md:flex-col">
 			<div>
 				<h1
 					className={`text-8xl max-sm:text-7xl ${headerFont.className} tracking-wide relative flex`}
@@ -66,7 +66,10 @@ export default function Footer() {
 				<div className="opacity-50 max-md:mt-2 max-sm:w-full max-sm:mt-5">
 					<span className="flex justify-center text-xs">
 						Made with
-						<IconHeartFilled size={20} className=" text-primary mx-1 max-sm:size-[15px]" />
+						<IconHeartFilled
+							size={20}
+							className=" text-primary mx-1 max-sm:size-[15px]"
+						/>
 						by @fbn776
 					</span>
 					<div className="flex gap-1 mt-1 text-[0.7rem] justify-center items-center">

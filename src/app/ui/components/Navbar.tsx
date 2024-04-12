@@ -8,23 +8,29 @@ import {
 } from "@tabler/icons-react";
 import { textFont, headerFont } from "@/app/ui/fonts";
 import { useEffect, useRef } from "react";
+import useTheme from "@/app/lib/useTheme";
 
-//TODO do this;
 export default function Navbar() {
-	let theme = "dark";
 	const navbar = useRef<HTMLElement>(null);
+	const [theme, changeTheme] = useTheme();
 
 	useEffect(() => {
-		function scrollFunc() {
-			if(!navbar.current)
-				return;
+		const mainSection = document.querySelector(".main");
 
-			navbar.current.classList.toggle('scrolled-state', window.scrollY > 50);
+		function scrollFunc() {
+			if (!navbar.current) return;
+
+			navbar.current.classList.toggle(
+				"scrolled-state",
+				(mainSection?.scrollTop || 0) > 50
+			);
 		}
+
 		scrollFunc();
-		window.addEventListener("scroll", scrollFunc);
+		mainSection?.addEventListener("scroll", scrollFunc);
+
 		return () => {
-			window.removeEventListener("scroll", scrollFunc);
+			mainSection?.removeEventListener("scroll", scrollFunc);
 		};
 	}, []);
 
@@ -32,7 +38,7 @@ export default function Navbar() {
 		<>
 			<nav
 				ref={navbar}
-				className={`${textFont.className} navbar fixed z-50 left-0 w-full text-white flex justify-between py-5 items-center main-section`}
+				className={`${textFont.className} navbar fixed z-50 left-0 w-full text-dark dark:text-light flex justify-between py-5 items-center main-section`}
 			>
 				<h1
 					className={`${headerFont.className} text-2xl tracking-wide text-primary`}
@@ -52,7 +58,22 @@ export default function Navbar() {
 					<Link draggable="false" href="#contact" className="nav-link">
 						Contact
 					</Link>
-					{theme === "light" ? <IconMoonFilled /> : <IconSunFilled />}
+					<button onClick={changeTheme} className="cursor-pointer relative w-[24px]">
+						<IconMoonFilled
+							className={`${
+								theme === "light"
+									? "scale-1 translate-y-0"
+									: "scale-0 translate-y-5"
+							} theme-change-icon`}
+						/>
+						<IconSunFilled
+							className={`${
+								theme === "dark"
+									? "scale-1 translate-y-0"
+									: "scale-0 -translate-y-5"
+							} theme-change-icon`}
+						/>
+					</button>
 					<IconCategory2 className="sm:hidden" />
 				</section>
 			</nav>

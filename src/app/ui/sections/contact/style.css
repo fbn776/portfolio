@@ -32,7 +32,7 @@
 }
 
 .glass-bg:hover {
-	@apply bg-primary bg-opacity-55;
+	@apply bg-primary bg-opacity-30;
 	transform: scale(1.1);
 }
 
@@ -44,7 +44,7 @@
 	backdrop-filter: blur(10px);
 	border: 1px solid rgba(175, 180, 239, 0.075);
 
-	@apply mb-4 px-5 py-2 text-white rounded-md;
+	@apply mb-4 px-5 py-2 text-dark dark:text-light rounded-md border-[rgba(90,92,126,0.15)] dark:border-[rgba(175,180,239,0.075)] ;
 }
 
 .connect-form textarea {

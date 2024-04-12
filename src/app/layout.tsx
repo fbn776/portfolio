@@ -39,7 +39,7 @@ export default function RootLayout({
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			</head>
-			<body className={textFont.className}>
+			<body className={`${textFont.className} dark`}>
 				<Background />
 				{children}
 			</body>

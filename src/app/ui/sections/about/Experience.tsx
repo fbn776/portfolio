@@ -21,7 +21,7 @@ export default function Experience() {
 								{data.skills.map((text, i) => {
 									return (
 										<span
-											className="px-4 bg-primary bg-opacity-60 text-sm py-1 rounded-full min-w-[50px] text-center"
+											className="px-4 bg-primary text-light bg-opacity-60 text-sm py-1 rounded-full min-w-[50px] text-center"
 											key={i}
 										>
 											{text}
