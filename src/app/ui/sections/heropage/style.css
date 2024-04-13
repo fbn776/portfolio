@@ -2,9 +2,22 @@
 	position: relative;
 	width: 450px;
 	aspect-ratio: 1 / 1;
-	@apply bg-primary max-sm:w-full lg:h-[450px];
+	@apply bg-primary max-sm:w-full lg:h-[450px] p-[40px];
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 40px;
+}
+
+.resume-btn-cont .resume-download {
+	position: relative;
+	@apply bg-primary rounded-full p-2;
+	transform: translateX(-55px);
+	opacity: 0;
+	transition: transform 0.2s, opacity 0.2s;
+	z-index: 0;
+}
+
+.resume-btn-cont:hover .resume-download {
+	transform: translateX(0px);
+	opacity: 1;
 }
