@@ -158,3 +158,12 @@ body {
 	top: 0;
 	transition: transform 0.3s;
 }
+
+.hover-primary {
+	transition: transform 0.2s, color 0.2s;
+}
+
+.hover-primary:hover {
+	transform: scale(1.1);
+	@apply text-primary;
+}

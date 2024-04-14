@@ -37,18 +37,16 @@ export default function About() {
 							<span className="text-primary">Febin Nelson P</span>. I&apos;m
 							currently a second year student pursuing Bachelor of
 							Technology(BTech) in Computer Science and Engineering at Rajiv
-							Gandhi Institute of Technology (RIT) Kottayam. <br />
+							Gandhi Institute of Technology (RIT) Kottayam.
+							<br />
 							<br />
 						</p>
 						<p>
 							I am a passionate and dedicated developer and an aspiring software
-							engineer with a strong interest in creating innovative and
-							user-friendly digital solutions. I have experience in web
-							development, software engineering, and project management. I am
+							engineer with a strong interest in creating innovative and solving problems.
+							I&apos;m experienced in web technologies, software development, and project management. I am
 							always looking for opportunities to expand my skills and
-							knowledge. I am eager to continue learning and growing in the
-							field of software engineering and contribute to the success of any
-							organization I work with. <br />I have experience working with
+							knowledge. <br />I&apos;m experienced in working with
 							various technologies and tools like{" "}
 							<span className="text-primary">
 								React, Node.js, Express.js, MongoDB, MySQL, Git, and more.
@@ -56,11 +54,10 @@ export default function About() {
 							<br />
 							<br />
 						</p>
-						<p>
+						<p className="max-sm:hidden">
 							I have worked on various projects and initiatives, and I have
 							excelled academically. I am always looking for opportunities to
-							learn and grow, and I am excited about the future of software
-							engineering.
+							learn and grow, and I am excited about what the future holds.
 						</p>
 					</div>
 
