@@ -21,3 +21,24 @@
 	transform: translateX(0px);
 	opacity: 1;
 }
+
+
+.resume-link {
+	position: relative;
+	overflow: hidden;
+}
+
+.resume-link::before {
+	content: "";
+	position: absolute;
+	top: -25%;
+	width: 35px;
+	height: 150%;
+	transform: translate(-60px) rotate(-20deg);
+	@apply bg-white bg-opacity-30;
+	transition: transform 0.7s;
+}
+
+.resume-link:hover::before {
+	transform: translate(180px) rotate(-20deg);
+}

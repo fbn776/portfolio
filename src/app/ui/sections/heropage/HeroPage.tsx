@@ -4,7 +4,7 @@ import { textFont, headerFont } from "@/app/ui/fonts";
 import Avatar from "./Avatar";
 import { TypeAnimation } from "react-type-animation";
 import "./style.css";
-import ResumeBtn from "./Resume";
+import ResumeBtn from "./ResumeBtn";
 
 export default function HeroPage() {
 	return (

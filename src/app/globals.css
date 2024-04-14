@@ -6,7 +6,8 @@
 	outline: 1px solid red;
 }
 
-html, main{
+html,
+main {
 	scroll-behavior: smooth;
 }
 
@@ -18,7 +19,7 @@ html, main{
 
 ::-webkit-scrollbar-track {
 	/* background-color: #212121; */
-	@apply bg-lightScroll dark:bg-darkScroll
+	@apply bg-lightScroll dark:bg-darkScroll;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -59,7 +59,7 @@ export default function ResumeBtn() {
 		<div className="mt-8 flex max-lg:justify-center max-sm:justify-start items-center gap-4 text-light resume-btn-cont relative">
 			<Link
 				href={Resume.driveLink}
-				className="px-5 py-2 bg-primary rounded-full flex items-center gap-2 w-fit relative z-10"
+				className="px-5 py-2 bg-primary rounded-full flex items-center gap-2 w-fit relative z-10 resume-link"
 			>
 				See my Resume
 				<ResumeIc />
