@@ -13,7 +13,7 @@ export default function ReadMore({ description }: { description: string }) {
 				{description}
 			</p>
 			<button
-				className="font-bold text-base text-right w-full mb-2 opacity-80 sm:hidden"
+				className="font-bold text-sm text-right w-full pb-2 opacity-80 sm:hidden hover:text-primary"
 				onClick={() => {
 					setExpanded((prev) => !prev);
 				}}
