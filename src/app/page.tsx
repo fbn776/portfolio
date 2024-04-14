@@ -8,7 +8,7 @@ import Footer from "./ui/sections/footer/Footer";
 
 export default function Home() {
 	return (
-		<main className="main overflow-y-scroll h-full overflow-x-hidden">
+		<main className="main overflow-y-scroll w-full h-full overflow-x-hidden">
 			<Navbar />
 			<HeroPage />
 			<About />

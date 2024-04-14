@@ -127,10 +127,6 @@ export default class Entity {
 
 		ctx.globalAlpha = 1;
 
-		// ctx.fillStyle = "red";
-		// ctx.arc(0, 0, 10, 0, Math.PI * 2);
-		// ctx.fill();
-
 		ctx.restore();
 		ctx.closePath();
 	}
