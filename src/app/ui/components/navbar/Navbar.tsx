@@ -5,14 +5,18 @@ import {
 	IconCategory2,
 	IconMoonFilled,
 	IconSunFilled,
+	IconX,
 } from "@tabler/icons-react";
 import { textFont, headerFont } from "@/app/ui/fonts";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useTheme from "@/app/lib/useTheme";
+import "./style.css";
+import SidePanel from "./SidePanel";
 
 export default function Navbar() {
 	const navbar = useRef<HTMLElement>(null);
 	const [theme, changeTheme] = useTheme();
+	const [isPanelOpen, setIsPanelOpen] = useState(false);
 
 	useEffect(() => {
 		const mainSection = document.querySelector(".main");
@@ -43,7 +47,7 @@ export default function Navbar() {
 				<h1
 					className={`${headerFont.className} text-2xl tracking-wide text-primary`}
 				>
-					FBN776
+					<Link href="/">FBN776</Link>
 				</h1>
 				<section className="flex gap-8 max-sm:gap-5">
 					<Link draggable="false" href="#about" className="nav-link">
@@ -58,7 +62,10 @@ export default function Navbar() {
 					<Link draggable="false" href="#contact" className="nav-link">
 						Contact
 					</Link>
-					<button onClick={changeTheme} className="cursor-pointer relative w-[24px]">
+					<button
+						onClick={changeTheme}
+						className="cursor-pointer relative w-[24px] icon-link"
+					>
 						<IconMoonFilled
 							className={`${
 								theme === "light"
@@ -74,8 +81,15 @@ export default function Navbar() {
 							} theme-change-icon`}
 						/>
 					</button>
-					<IconCategory2 className="sm:hidden" />
+					<button className="sm:hidden icon-link" onClick={() => setIsPanelOpen(true)}>
+						<IconCategory2 />
+					</button>
 				</section>
+
+				<SidePanel
+					isPanelOpen={isPanelOpen}
+					onClose={() => setIsPanelOpen(false)}
+				/>
 			</nav>
 		</>
 	);

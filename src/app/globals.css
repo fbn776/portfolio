@@ -55,26 +55,6 @@ body {
 	@apply px-20 max-sm:px-10;
 }
 
-.nav-link {
-	position: relative;
-	@apply max-sm:hidden;
-}
-
-.nav-link::before {
-	content: "";
-	position: absolute;
-	width: 0%;
-	height: 2px;
-	left: -10%;
-	bottom: -5px;
-	@apply bg-primary border-primary;
-	transition: 0.5s width;
-}
-
-.nav-link:hover::before {
-	width: 120%;
-}
-
 .header {
 	@apply text-dark dark:text-light tracking-wide my-10;
 	display: flex;

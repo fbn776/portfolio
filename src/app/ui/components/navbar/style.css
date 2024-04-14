@@ -1,0 +1,48 @@
+.nav-link {
+	position: relative;
+	@apply max-sm:hidden;
+}
+
+.nav-link::before,
+a.nav-btn::before {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	left: -10%;
+	bottom: -5px;
+	@apply bg-primary border-primary;
+	transition: 0.5s width;
+}
+
+.nav-link:hover::before,
+.nav-btn:hover::before {
+	width: 120%;
+}
+
+.mobile-nav-panel {
+	@apply sm:hidden fixed inset-0 z-50 bg-black bg-opacity-70 flex flex-col justify-center items-center gap-12 backdrop-blur-sm;
+	transition: transform 0.5s, opacity 0.5s;
+	opacity: 0;
+	transform: translateY(-100%);
+}
+
+.mobile-nav-panel.opened {
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.mobile-nav-panel .nav-btn {
+	position: relative;
+	letter-spacing: 3px;
+	transition: transform 0.2s, opacity 0.2s;
+	transform: translateX(-100%);
+	opacity: 0;
+	@apply text-4xl;
+}
+
+.mobile-nav-panel.opened .nav-btn {
+	opacity: 1;
+	transform: translateX(0%);
+	transition-delay: 0s;
+}
