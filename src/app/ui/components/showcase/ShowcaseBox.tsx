@@ -62,9 +62,9 @@ export default function ShowcaseBox({data, featured} : {data : IProjects[], feat
 								/>
 								<div className="right-overlay">
 									<div>
-										<h2 className="text-primary text-xs font-semibold mb-1">
+										{featured && <h2 className="text-primary text-xs font-semibold mb-1">
 											Featured Project
-										</h2>
+										</h2>}
 										<h1 className="text-3xl font-semibold tracking-wider mb-4">
 											{project.title}
 										</h1>
