@@ -1,14 +1,6 @@
-export interface IProjects {
-	title: string;
-	description: string;
-	screenShotSrc: string;
-	technologies: string[];
+import { IProjects } from "./IProjects";
 
-	github?: string;
-	website?: string;
-}
-
-const ProjectsData: IProjects[] = [
+const FeaturedProjectsData: IProjects[] = [
 	{
 		title: "UniMate",
 		description:
@@ -28,4 +20,4 @@ const ProjectsData: IProjects[] = [
 	},
 ];
 
-export default ProjectsData;
+export default FeaturedProjectsData;

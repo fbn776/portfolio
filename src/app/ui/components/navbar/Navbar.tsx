@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {
 	IconCategory2,
+	IconHome,
 	IconMoonFilled,
 	IconSunFilled,
 	IconX,
@@ -13,7 +14,7 @@ import useTheme from "@/app/lib/useTheme";
 import "./style.css";
 import SidePanel from "./SidePanel";
 
-export default function Navbar() {
+export default function Navbar({ isHomePage }: { isHomePage: boolean }) {
 	const navbar = useRef<HTMLElement>(null);
 	const [theme, changeTheme] = useTheme();
 	const [isPanelOpen, setIsPanelOpen] = useState(false);
@@ -50,18 +51,22 @@ export default function Navbar() {
 					<Link href="/">FBN776</Link>
 				</h1>
 				<section className="flex gap-8 max-sm:gap-5">
-					<Link draggable="false" href="#about" className="nav-link">
-						About
-					</Link>
-					<Link draggable="false" href="#skills" className="nav-link">
-						Skills
-					</Link>
-					<Link draggable="false" href="#projects" className="nav-link">
-						Projects
-					</Link>
-					<Link draggable="false" href="#contact" className="nav-link">
-						Contact
-					</Link>
+					{isHomePage ? (
+						<>
+							<Link draggable="false" href="#about" className="nav-link">
+								About
+							</Link>
+							<Link draggable="false" href="#skills" className="nav-link">
+								Skills
+							</Link>
+							<Link draggable="false" href="#projects" className="nav-link">
+								Projects
+							</Link>
+							<Link draggable="false" href="#contact" className="nav-link">
+								Contact
+							</Link>
+						</>
+					) : ""}
 					<button
 						onClick={changeTheme}
 						className="cursor-pointer relative w-[24px] icon-link"
@@ -81,9 +86,18 @@ export default function Navbar() {
 							} theme-change-icon`}
 						/>
 					</button>
-					<button className="sm:hidden icon-link" onClick={() => setIsPanelOpen(true)}>
-						<IconCategory2 />
-					</button>
+					{isHomePage ? (
+						<button
+							className="sm:hidden icon-link"
+							onClick={() => setIsPanelOpen(true)}
+						>
+							<IconCategory2 />
+						</button>
+					) : 
+						<Link href="/">
+							<IconHome/>
+						</Link>
+					}
 				</section>
 
 				<SidePanel
