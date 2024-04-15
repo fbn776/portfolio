@@ -15,9 +15,6 @@ export default function Contact() {
 			<p>
 				Interested in collaborating, discussing potential projects, or simply
 				want to connect? Your feedback and inquiries are always welcome!
-				Don&apos;t hesitate to reach out through the contact information listed
-				below. Let&apos;s start a conversation and explore how we can bring your
-				ideas to life.
 			</p>
 			<div className="mt-10 flex justify-center gap-20 items-center max-sm:flex-col max-sm:items-start max-sm:gap-3">
 				
