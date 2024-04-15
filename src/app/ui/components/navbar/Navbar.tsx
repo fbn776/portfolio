@@ -6,7 +6,6 @@ import {
 	IconHome,
 	IconMoonFilled,
 	IconSunFilled,
-	IconX,
 } from "@tabler/icons-react";
 import { textFont, headerFont } from "@/app/ui/fonts";
 import { useEffect, useRef, useState } from "react";
@@ -14,28 +13,30 @@ import useTheme from "@/app/lib/useTheme";
 import "./style.css";
 import SidePanel from "./SidePanel";
 
-export default function Navbar({ isHomePage }: { isHomePage: boolean }) {
+export default function Navbar({ isHomePage, parentSelector = ".main" }: { isHomePage: boolean, parentSelector?: string }) {
 	const navbar = useRef<HTMLElement>(null);
 	const [theme, changeTheme] = useTheme();
 	const [isPanelOpen, setIsPanelOpen] = useState(false);
 
 	useEffect(() => {
-		const mainSection = document.querySelector(".main");
-
+		const parent = document.querySelector(parentSelector);
+				
 		function scrollFunc() {
 			if (!navbar.current) return;
 
+			console.log(parent, parent?.scrollTop);
+
 			navbar.current.classList.toggle(
 				"scrolled-state",
-				(mainSection?.scrollTop || 0) > 50
+				(parent?.scrollTop || 0) > 50
 			);
 		}
 
 		scrollFunc();
-		mainSection?.addEventListener("scroll", scrollFunc);
+		parent?.addEventListener("scroll", scrollFunc);
 
 		return () => {
-			mainSection?.removeEventListener("scroll", scrollFunc);
+			parent?.removeEventListener("scroll", scrollFunc);
 		};
 	}, []);
 

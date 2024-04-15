@@ -7,6 +7,11 @@ export const metadata: Metadata = {
 	title: "fbn776",
 	description:
 		"Welcome to fbn776's Portfolio - Aspiring Computer Science Student | Explore my journey through coding challenges, projects, and innovations. Dive into my world of algorithms, data structures, and software development. Let's embark on a digital journey together!",
+	applicationName: "Portfolio",
+	authors: {
+		name: "fbn776",
+	},
+	keywords: ["fbn776", "Portfolio", "Computer Science", "Software Development"],
 };
 
 export default function RootLayout({
@@ -39,7 +44,7 @@ export default function RootLayout({
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			</head>
-			<body className={`${textFont.className} dark`}>
+			<body className={`${textFont.className} dark overflow-x-hidden`}>
 				<Background />
 				{children}
 			</body>
