@@ -8,14 +8,13 @@ View the live demo [here](https://portfolio-rho-steel-95.vercel.app/).
 
 ### Desktop
 
-![Home](/screenshots/desktop_home.png)
-![Contact](/screenshots/desktop_contact.png)
-
-### Mobile
-
-![Home](/screenshots/mobile_home.jpg)
-![Education](/screenshots/mobile_edu.jpg)
-![Skills](/screenshots/mobile_skills.jpg)
+| Desktop | Mobile |
+|--|--|
+| ![Home dark](/screenshots/desktop_home.png) |  ![Home dark](/screenshots/mobile_home.jpg) |
+|
+| ![Home light](/screenshots/desktop_home_light.png) | ![Home light](/screenshots/mobile_home_light.jpg) |
+| ![Contact dark](/screenshots/desktop_contact.png) | ![Contact light](/screenshots/mobile_contact.jpg) |
+| ![Contact light](/screenshots/desktop_contact_light.png) | ![Contact light](/screenshots/mobile_contact_light.jpg) |
 
 ### Local installation
 
