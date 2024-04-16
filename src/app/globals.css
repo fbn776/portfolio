@@ -72,16 +72,6 @@ body {
 	@apply bg-primary;
 }
 
-.navbar {
-	z-index: 9999;
-	transition: background-color 0.2s 0s, padding 0.2s 0s;
-	@apply py-10;
-}
-
-.navbar.scrolled-state {
-	@apply py-5 bg-black bg-opacity-60 text-light;
-}
-
 .blob-cont {
 	border-radius: 70% 30% 46% 54% / 36% 29% 71% 64%;
 	@apply bg-primary;

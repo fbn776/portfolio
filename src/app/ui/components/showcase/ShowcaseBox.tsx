@@ -16,9 +16,9 @@ export default function ShowcaseBox({data, featured} : {data : IProjects[], feat
 							key={i}
 						>
 							<div className="left-section">
-								{featured && <h2 className="text-primary text-xs font-semibold mb-1 max-lg:hidden">
-									Featured Project
-								</h2>}
+								<h2 className="text-primary text-xs font-semibold mb-1 max-lg:hidden">
+									{featured ? "Featured Project" : "Other Project"}
+								</h2>
 								<h1 className="text-3xl font-semibold tracking-wider mb-4 max-lg:hidden">
 									{project.title}
 								</h1>

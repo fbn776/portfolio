@@ -1,17 +1,16 @@
 "use client";
 
-import Link from "next/link";
-import {
-	IconCategory2,
-	IconHome,
-} from "@tabler/icons-react";
-import { textFont, headerFont } from "@/app/ui/fonts";
-import { useEffect, useRef, useState } from "react";
-import useTheme from "@/app/lib/useTheme";
 import "./style.css";
+import Link from "next/link";
+import { IconCategory2, IconHome } from "@tabler/icons-react";
+import { textFont, headerFont } from "@/app/ui/fonts";
+import { useState } from "react";
+import useTheme from "@/app/lib/useTheme";
 import SidePanel from "./SidePanel";
 import HomepageLinks from "./HomepageLinks";
 import ThemeButton from "./ThemeButton";
+import useScrollEffect from "@/app/lib/useScrollEffect";
+
 
 export default function Navbar({
 	isHomePage,
@@ -20,30 +19,9 @@ export default function Navbar({
 	isHomePage: boolean;
 	parentSelector?: string;
 }) {
-	const navbar = useRef<HTMLElement>(null);
 	const [theme, changeTheme] = useTheme();
 	const [isPanelOpen, setIsPanelOpen] = useState(false);
-
-	useEffect(() => {
-		const parent = document.querySelector(parentSelector);
-
-		function scrollFunc() {
-			if (!navbar.current) return;
-
-			console.log(parent?.scrollTop, parent?.clientHeight, parent?.scrollHeight)
-			navbar.current.classList.toggle(
-				"scrolled-state",
-				(parent?.scrollTop || 0) > 50
-			);
-		}
-
-		scrollFunc();
-		parent?.addEventListener("scroll", scrollFunc);
-
-		return () => {
-			parent?.removeEventListener("scroll", scrollFunc);
-		};
-	}, [parentSelector]);
+	const [navbar] = useScrollEffect(parentSelector);
 
 	return (
 		<nav
@@ -58,7 +36,7 @@ export default function Navbar({
 			<section className="flex gap-8 max-sm:gap-5">
 				{isHomePage && <HomepageLinks />}
 
-				<ThemeButton changeTheme={changeTheme} theme={theme}/>
+				<ThemeButton changeTheme={changeTheme} theme={theme} />
 
 				{isHomePage ? (
 					<button

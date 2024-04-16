@@ -11,6 +11,10 @@ function getTheme(localTheme: string | null): "light" | "dark" {
 	return "dark";
 }
 
+/**
+ * Hook to use the theme state and change the theme. This gets the theme from the local storage if it exists, otherwise it gets the theme from the user's system preferences.
+ * @returns a tuple containing the current theme and a function to change the theme
+ */
 export default function useTheme() {
 	const [theme, setTheme] = useState<"light" | "dark">("dark");
 
