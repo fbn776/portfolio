@@ -4,7 +4,7 @@ This is my personal portfolio website. It is built using `Next.js` and `Tailwind
 
 View the live demo [here](https://portfolio-rho-steel-95.vercel.app/).
 
-## Images
+## Screenshots
 
 ### Desktop
 
