@@ -19,11 +19,7 @@ export default function useScrollEffect(parentSelector: string) {
 			navbar.current.classList.toggle("scrolled-state", currScroll > 50);
 
 			if (currScroll > 200)
-				if (currScroll - lastScroll > 0) {
-					navbar.current.classList.add("nav-hide");
-				} else {
-					navbar.current.classList.remove("nav-hide");
-				}
+				navbar.current.classList.toggle("nav-hide", currScroll > lastScroll);
 
 			lastScroll = currScroll;
 		}
