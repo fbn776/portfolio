@@ -5,10 +5,10 @@ import { clampVec, mapValue, normalizeVec } from "@/app/lib/utils";
 
 export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 	useEffect(() => {
+		const scrollParent = document.querySelector("main");
+
 		const scrollData = {
-			x_: 0,
 			y_: 0,
-			x: 0,
 			y: 0,
 		};
 
@@ -43,15 +43,16 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			canvas.height = height = window.innerHeight;
 		};
 
+
 		const getScrollData = () => {
-			scrollData.x_ = scrollData.x;
 			scrollData.y_ = scrollData.y;
-			scrollData.x = window.scrollX;
-			scrollData.y = window.scrollY;
+			scrollData.y = scrollParent!.scrollTop;
+
+			console.log(scrollData.y - scrollData.y_);
 
 			const force = {
-				x: (window.scrollX - scrollData.x_) * 30,
-				y: (window.scrollY - scrollData.y_) * 30,
+				x: 0,
+				y: (scrollParent!.scrollTop - scrollData.y_) * 30,
 			};
 
 			clampVec(force, -500, 500);
@@ -70,7 +71,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 
 		window.addEventListener("resize", resize);
 
-		window.addEventListener("scroll", getScrollData);
+		scrollParent?.addEventListener("scroll", getScrollData);
 
 		/**For some reason, `width` doesn't reflect the actual value at the 1st run each time. It's more like half the screen's width (donno why).
 		 * And this works, again not really sure why.
@@ -107,8 +108,8 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 
 		// Clean up the useEffect
 		return () => {
-			canvas.removeEventListener("resize", resize);
-			window.removeEventListener("scroll", getScrollData);
+			window.removeEventListener("resize", resize);
+			scrollParent?.removeEventListener("scroll", getScrollData);
 			cancelAnimationFrame(drawID);
 		};
 	}, [canvasRef]);
