@@ -48,8 +48,6 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			scrollData.y_ = scrollData.y;
 			scrollData.y = scrollParent!.scrollTop;
 
-			console.log(scrollData.y - scrollData.y_);
-
 			const force = {
 				x: 0,
 				y: (scrollParent!.scrollTop - scrollData.y_) * 30,
