@@ -1,11 +1,14 @@
 import Link from "next/link";
 
-
 export default function NotFound() {
 	return (
 		<main className="w-full h-full flex justify-center items-center text-white flex-col">
 			<h1 className="text-4xl text-primary font-semibold max-sm:text-center max-sm:text-8xl">
-				404 <span className="max-sm:hidden">-</span> <span className="max-sm:block max-sm:text-xl max-sm:text-white font-normal">Page Not Found</span>
+				<span className="tracking-wider text-5xl">404</span>
+				<span className="max-sm:hidden pl-[1px] mx-3 rounded-md h-full bg-black dark:bg-white opacity-30"/>
+				<span className="max-sm:block max-sm:text-xl max-sm:text-white font-normal">
+					Page Not Found
+				</span>
 			</h1>
 			<Link
 				href="/"
