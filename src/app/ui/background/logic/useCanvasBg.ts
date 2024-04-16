@@ -111,5 +111,5 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 			window.removeEventListener("scroll", getScrollData);
 			cancelAnimationFrame(drawID);
 		};
-	}, []);
+	}, [canvasRef]);
 }

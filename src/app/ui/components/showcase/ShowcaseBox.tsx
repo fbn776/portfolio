@@ -38,6 +38,7 @@ export default function ShowcaseBox({data, featured} : {data : IProjects[], feat
 											target="_blank"
 											rel="noreferrer"
 											className="max-lg:p-2 max-lg:bg-darkBG glass-border rounded-full"
+											aria-label="View project on github"
 										>
 											<IconBrandGithub className="icon-link" />
 										</Link>
@@ -48,6 +49,7 @@ export default function ShowcaseBox({data, featured} : {data : IProjects[], feat
 											target="_blank"
 											rel="noreferrer"
 											className="max-lg:p-2 max-lg:bg-darkBG glass-border rounded-full"
+											aria-label="View project website or live demo"
 										>
 											<IconExternalLink className="icon-link" />
 										</Link>

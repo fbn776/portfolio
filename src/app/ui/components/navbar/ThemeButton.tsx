@@ -10,6 +10,7 @@ export default function ThemeButton({
 }) {
 	return (
 		<button
+			aria-label="Change Theme"
 			onClick={changeTheme}
 			className="cursor-pointer relative w-[24px] icon-link"
 		>

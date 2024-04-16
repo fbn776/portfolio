@@ -8,7 +8,7 @@ import ResumeBtn from "./ResumeBtn";
 
 export default function HeroPage() {
 	return (
-		<section className="main-section min-h-[100dvh]">
+		<section id="home" className="main-section min-h-[100dvh]">
 			<div className="flex w-full pt-28 max-sm:pt-24 justify-between lg:items-center max-lg:justify-end max-lg:gap-16 max-lg:flex-col-reverse max-lg:flex max-lg:items-center max-sm:items-start select-none max-sm:gap-5">
 				<div
 					className={`${textFont.className} text-dark dark:text-light tracking-wide flex flex-col justify-start items-start`}

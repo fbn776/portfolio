@@ -11,7 +11,6 @@ import HomepageLinks from "./HomepageLinks";
 import ThemeButton from "./ThemeButton";
 import useScrollEffect from "@/app/lib/useScrollEffect";
 
-
 export default function Navbar({
 	isHomePage,
 	parentSelector = ".main",
@@ -31,7 +30,9 @@ export default function Navbar({
 			<h1
 				className={`${headerFont.className} text-2xl tracking-wide text-primary`}
 			>
-				<Link href="/">FBN776</Link>
+				<Link href="/" aria-label="Go Home">
+					FBN776
+				</Link>
 			</h1>
 			<section className="flex gap-8 max-sm:gap-5">
 				{isHomePage && <HomepageLinks />}
@@ -40,13 +41,14 @@ export default function Navbar({
 
 				{isHomePage ? (
 					<button
+						aria-label="Open side panel"
 						className="sm:hidden icon-link"
 						onClick={() => setIsPanelOpen(true)}
 					>
 						<IconCategory2 />
 					</button>
 				) : (
-					<Link href="/">
+					<Link href="/" aria-label="Go Home">
 						<IconHome />
 					</Link>
 				)}

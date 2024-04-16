@@ -75,6 +75,7 @@ export default function Connect() {
 					status === "error" && "bg-red-600"
 				} ${status === "success" && "bg-green-600"}`}
 				disabled={status === "pending" || status === "timeout"}
+				aria-label="Send message"
 			>
 				{status === "error" ? (
 					<>

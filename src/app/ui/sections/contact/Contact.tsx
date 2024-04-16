@@ -20,11 +20,11 @@ export default function Contact() {
 				
 				<span className="flex gap-3 items-center hover-primary">
 					<IconMail size="30" className="text-primary"/>
-					<a href={`mailto:${Email}`}>{Email}</a>
+					<a href={`mailto:${Email}`} aria-label="Send me an email">{Email}</a>
 				</span>
 				<span className="flex gap-3 items-center hover-primary">
 					<IconPhone size="30" className="text-primary"/>
-					<a href={`tel:${Phone}`}>{Phone}</a>
+					<a href={`tel:${Phone}`} aria-label="Call me">{Phone}</a>
 				</span>
 			</div>
 			<div className="w-full h-fit flex justify-stretch mt-10 max-lg:flex-col ">

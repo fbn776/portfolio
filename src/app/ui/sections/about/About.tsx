@@ -63,16 +63,16 @@ export default function About() {
 
 					<div className="flex justify-between items-center mt-5">
 						<div className="flex gap-5 max-sm:gap-3">
-							<Link href={MyLinks.linkedin}>
+							<Link href={MyLinks.linkedin} aria-label="See my linkedin profile">
 								<IconBrandLinkedin className="icon-link" />
 							</Link>
-							<Link href={MyLinks.github}>
+							<Link href={MyLinks.github} aria-label="See my github profile">
 								<IconBrandGithub className="icon-link" />
 							</Link>
-							<Link href={MyLinks.twitter}>
+							<Link href={MyLinks.twitter} aria-label="See my twitter(now X) profile">
 								<IconBrandX className="icon-link" />
 							</Link>
-							<Link href={MyLinks.instagram}>
+							<Link href={MyLinks.instagram} aria-label="See my instagram profile">
 								<IconBrandInstagram className="icon-link" />
 							</Link>
 						</div>
@@ -80,6 +80,7 @@ export default function About() {
 						<Link
 							href="#education"
 							className="bg-primary rounded-lg px-5 py-3 max-sm:py-2 text-light"
+							aria-label="Read about my education"
 						>
 							Read More
 						</Link>

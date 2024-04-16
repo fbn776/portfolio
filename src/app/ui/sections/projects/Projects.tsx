@@ -18,8 +18,9 @@ export default function Projects() {
 				<Link
 					href="/projects"
 					className="px-5 py-2 bg-primary rounded text-light"
+					aria-label="View All Projects"
 				>
-					See More
+					See All Projects
 				</Link>
 			</div>
 		</section>

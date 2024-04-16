@@ -13,9 +13,9 @@ export default function Education() {
 						<h2 className="font-semibold opacity-90"> {data.course}</h2>
 						{data.description && (<ReadMore description={data.description}/>)}
 						{data.marks && (
-							<li className="list-none opacity-90 font-semibold">
+							<div className="opacity-90 font-semibold">
 								{data.marks}
-							</li>
+							</div>
 						)}
 					</>
 				);

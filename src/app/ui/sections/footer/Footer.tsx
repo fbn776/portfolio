@@ -29,6 +29,7 @@ export default function Footer() {
 								href={item.link}
 								key={index}
 								className="size-[30px] opacity-30 hover:opacity-100 hover:text-primary"
+								aria-label={`Social Link - ${item.name}`}
 							>
 								{SocialIcon(item.name)}
 							</Link>
@@ -39,26 +40,30 @@ export default function Footer() {
 			<div className="flex text-sm flex-col justify-between items-end max-md:mt-7">
 				<div className="flex gap-4 lg:gap-10 text-xl max-sm:text-base max-sm:gap-1 max-sm:justify-between max-sm:w-full">
 					<Link
-						href="#"
+						href="#home"
 						className="hover:text-primary hover:opacity-100 opacity-50"
+						aria-label="Go to top"
 					>
 						Home
 					</Link>
 					<Link
 						href="#about"
 						className="hover:text-primary hover:opacity-100 opacity-50"
+						aria-label="Go to about section"
 					>
 						About
 					</Link>
 					<Link
 						href="#projects"
 						className="hover:text-primary hover:opacity-100 opacity-50"
+						aria-label="Go to projects section"
 					>
 						Projects
 					</Link>
 					<Link
 						href="#contact"
 						className="hover:text-primary hover:opacity-100 opacity-50"
+						aria-label="Go to contact section"
 					>
 						Contact
 					</Link>
