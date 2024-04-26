@@ -19,7 +19,7 @@ export default function HeroPage() {
 						<span
 							className={`${headerFont.className} text-primary text-9xl tracking-wide`}
 						>
-							Vava
+							Febin
 						</span>
 					</div>
 					<div className="w-full text-8xl hidden max-lg:inline-block max-sm:text-5xl">
