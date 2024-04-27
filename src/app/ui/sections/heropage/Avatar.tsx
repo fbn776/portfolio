@@ -13,6 +13,9 @@ export default function Avatar() {
 			whileInView={{
 				x: 0,
 				opacity: 1,
+				transition: {
+					type: "tween"
+				}
 			}}
 		>
 			<motion.div
@@ -24,6 +27,9 @@ export default function Avatar() {
 				whileInView={{
 					y: 0,
 					opacity: 1,
+					transition: {
+						type: "tween"
+					}
 				}}
 				className="absolute bottom-0 aspect-square w-[80%] inline-block"
 			>
