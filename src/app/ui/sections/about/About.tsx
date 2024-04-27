@@ -49,7 +49,7 @@ export default function About() {
 							knowledge. <br />I&apos;m experienced in working with
 							various technologies and tools like{" "}
 							<span className="text-primary">
-								React, Node.js, Express.js, MongoDB, MySQL, Git, and more.
+								ReactJS, Node.js, Express.js, NextJS, MySQL, Git, and more.
 							</span>
 							<br />
 							<br />
