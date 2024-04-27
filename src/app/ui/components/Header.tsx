@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Header({
 	text,
 	className = "text-4xl",
-	id,
+	id = "",
 }: {
 	text: string;
 	className?: string;
@@ -15,8 +15,10 @@ export default function Header({
 		<motion.h2
 			initial={{ opacity: 0, x: -100 }}
 			whileInView={{ opacity: 1, x: 0 }}
+			transition={{ type: "tween" }}
+
 			className={`header ${className}`}
-			id={id || ""}
+			id={id}
 		>
 			{text}
 		</motion.h2>

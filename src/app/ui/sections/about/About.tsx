@@ -6,7 +6,6 @@ import {textFont} from "../../fonts";
 import Image from "next/image";
 import Education from "./Education";
 import Experience from "./Experience";
-import Link from "next/link";
 import MyLinks from "@/app/data/Links";
 import {motion} from "framer-motion";
 
@@ -22,14 +21,6 @@ const childVariant = {
     hidden: {x: 50, opacity: 0},
     show: {
         x: 0,
-        opacity: 1,
-    },
-};
-
-const childVariant2 = {
-    hidden: {y: 50, opacity: 0},
-    show: {
-        y: 0,
         opacity: 1,
     },
 };
@@ -108,7 +99,8 @@ export default function About() {
                         <div className="flex gap-5 max-sm:gap-3">
                             <motion.a
                                 transition={{type: "tween"}}
-                                variants={childVariant2} initial="hidden"
+                                variants={childVariant
+                            } initial="hidden"
                                 whileInView="show"
                                 href={MyLinks.linkedin}
                                 aria-label="See my linkedin profile"
@@ -117,21 +109,24 @@ export default function About() {
                             </motion.a>
                             <motion.a
                                 transition={{type: "tween"}}
-                                variants={childVariant2} initial="hidden"
+                                variants={childVariant
+                            } initial="hidden"
                                 whileInView="show"
                                 href={MyLinks.github} aria-label="See my github profile">
                                 <IconBrandGithub className="icon-link"/>
                             </motion.a>
                             <motion.a
                                 transition={{type: "tween"}}
-                                variants={childVariant2} initial="hidden"
+                                variants={childVariant
+                            } initial="hidden"
                                 whileInView="show"
                                 href={MyLinks.twitter} aria-label="See my twitter(now X) profile">
                                 <IconBrandX className="icon-link"/>
                             </motion.a>
                             <motion.a
                                 transition={{type: "tween"}}
-                                variants={childVariant2} initial="hidden"
+                                variants={childVariant
+                            } initial="hidden"
                                 whileInView="show"
                                 href={MyLinks.instagram} aria-label="See my instagram profile">
                                 <IconBrandInstagram className="icon-link"/>
