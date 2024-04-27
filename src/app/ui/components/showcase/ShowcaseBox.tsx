@@ -63,17 +63,17 @@ export default function ShowcaseBox({data, featured} : {data : IProjects[], feat
 									fill={true}
 								/>
 								<div className="right-overlay">
-									<div>
+									<div className="top">
 										{featured && <h2 className="text-primary text-xs font-semibold mb-1">
 											Featured Project
 										</h2>}
-										<h1 className="text-3xl font-semibold tracking-wider mb-4">
+										<h2 className="text-3xl font-semibold tracking-wider mb-4" style={{transitionDelay: '0.05s'}}>
 											{project.title}
-										</h1>
+										</h2>
 									</div>
 									<div className="tech-stack-cont w-full flex justify-end flex-wrap text-xs gap-3 opacity-80 mt-4">
 										{project.technologies.map((tech, j) => {
-											return <span key={j}>{tech}</span>;
+											return <span key={j} style={{transitionDelay: `${j/20}s`}}>{tech}</span>;
 										})}
 									</div>
 								</div>

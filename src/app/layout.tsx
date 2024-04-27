@@ -4,16 +4,16 @@ import { textFont } from "@/app/ui/fonts";
 import Background from "./ui/background/Background";
 
 export const metadata: Metadata = {
-	title: "fbn776",
+	title: "Febin Nelson P",
 	description:
-		"Welcome to fbn776's Portfolio - Aspiring Computer Science Student | Explore my journey through coding challenges, projects, and innovations. Dive into my world of algorithms, data structures, and software development. Let's embark on a digital journey together!",
+		"Welcome to Febin's Portfolio. I'm a computer science student and a software developer. I love to build things that make a difference.",
 	applicationName: "Portfolio",
 	authors: {
 		name: "fbn776",
 	},
-	keywords: ["fbn776", "Portfolio", "Computer Science", "Software Development"],
+	keywords: ["Febin", "Febin Nelson P", "Febin Nelson", "fbn776", "Portfolio", "Computer Science", "Software Development"],
 };
-
+``
 export default function RootLayout({
 	children,
 }: Readonly<{

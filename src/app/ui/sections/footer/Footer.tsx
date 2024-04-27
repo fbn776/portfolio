@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<section className="main-section text-dark dark:text-light py-5 footer overflow-hidden flex justify-between max-md:flex-col">
+		<section className="main-section select-none text-dark dark:text-light py-5 footer overflow-hidden flex justify-between max-md:flex-col">
 			<div>
 				<h1
 					className={`text-8xl max-sm:text-7xl ${headerFont.className} tracking-wide relative flex`}
@@ -30,6 +30,7 @@ export default function Footer() {
 								key={index}
 								className="size-[30px] opacity-30 hover:opacity-100 hover:text-primary"
 								aria-label={`Social Link - ${item.name}`}
+								draggable={false}	
 							>
 								{SocialIcon(item.name)}
 							</Link>

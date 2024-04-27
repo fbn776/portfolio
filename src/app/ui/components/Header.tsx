@@ -7,5 +7,5 @@ export default function Header({
 	className?: string;
 	id?: string;
 }) {
-	return <h1 className={`header ${className}`} id={id || ''}>{text}</h1>;
+	return <h2 className={`header ${className}`} id={id || ''}>{text}</h2>;
 }

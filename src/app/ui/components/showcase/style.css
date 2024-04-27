@@ -12,7 +12,28 @@
 }
 
 .project-cont .right-section .right-overlay {
+	transition: background-color 0.2s 0s;
 	@apply lg:hidden absolute inset-0 bg-black bg-opacity-80 text-light flex flex-col justify-between p-4;
+}
+
+.project-cont:hover .right-section .right-overlay {
+	@apply bg-opacity-0;
+}
+
+.project-cont .right-section .right-overlay .top h2 {
+	transition: transform 0.2s;
+}
+
+.project-cont .right-section .right-overlay .tech-stack-cont span {
+	transition: transform 0.2s;
+}
+
+.project-cont:hover .right-section .right-overlay .top h2 {
+	transform: translateY(-80px);
+}
+
+.project-cont:hover .right-section .right-overlay .tech-stack-cont span {
+	transform: translateY(200%);
 }
 
 .project-cont .description {

@@ -25,7 +25,7 @@ export default function Navbar({
 	return (
 		<nav
 			ref={navbar}
-			className={`${textFont.className} navbar fixed z-50 left-0 w-full text-dark dark:text-light flex justify-between py-5 items-center main-section`}
+			className={`${textFont.className} select-none navbar fixed z-50 left-0 w-full text-dark dark:text-light flex justify-between py-5 items-center main-section`}
 		>
 			<h1
 				className={`${headerFont.className} text-2xl tracking-wide text-primary`}
@@ -48,7 +48,7 @@ export default function Navbar({
 						<IconCategory2 />
 					</button>
 				) : (
-					<Link href="/" aria-label="Go Home">
+					<Link href="/" aria-label="Go Home" className="icon-link">
 						<IconHome />
 					</Link>
 				)}

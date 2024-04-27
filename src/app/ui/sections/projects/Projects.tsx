@@ -8,7 +8,7 @@ export default function Projects() {
 		<section className="main-section" id="projects">
 			<Header text="Projects" className="text-6xl" />
 
-			<ShowcaseBox data={FeaturedProjectsData} featured={true}/>
+			<ShowcaseBox data={FeaturedProjectsData} featured={true} />
 
 			<div className="text-dark dark:text-light">
 				Excited to see more? Click the button below to explore all my other

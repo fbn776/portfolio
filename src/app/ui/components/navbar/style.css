@@ -5,6 +5,8 @@
 }
 
 .navbar.scrolled-state {
+	backdrop-filter: blur(2px);
+	border-bottom: 3px solid rgba(40, 40, 40, 0.5);
 	@apply py-5 bg-black bg-opacity-60 text-light;
 }
 
