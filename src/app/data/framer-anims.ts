@@ -6,6 +6,14 @@ export const fadeRightChildVariant = {
     },
 };
 
+export const fadeLeftChildVariant = {
+    hidden: {x: 50, opacity: 0},
+    show: {
+        x: 0,
+        opacity: 1,
+    },
+};
+
 export const staggerParentVariant = {
     show: {
         transition: {
@@ -14,7 +22,7 @@ export const staggerParentVariant = {
     },
 };
 
-export const fadeBottomChildVariant = {
+export const fadeTopChildVariant = {
     hidden: {y: -50, opacity: 0},
     show: {
         y: 0,

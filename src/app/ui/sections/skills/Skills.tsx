@@ -5,7 +5,6 @@ import SkillsData from "@/app/data/skill/SkillsData";
 import "./style.css";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {staggerParentVariant} from "@data/framer-anims";
 
 export default function Skills() {
     return (

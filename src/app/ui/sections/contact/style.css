@@ -19,7 +19,7 @@
 	width: 3px;
 	top: 13%;
 	bottom: 10%;
-	height: calc(100%-13%-10%);
+	height: calc(100% - 13% - 10%);
 	@apply bg-primary bg-opacity-50 rounded-xl max-lg:hidden;
 }
 
