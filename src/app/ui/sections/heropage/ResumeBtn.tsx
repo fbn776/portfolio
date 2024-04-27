@@ -1,5 +1,6 @@
 import Resume from "@/app/data/Resume";
 import { IconDownload } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 function ResumeIc() {
@@ -56,7 +57,12 @@ function ResumeIc() {
 
 export default function ResumeBtn() {
 	return (
-		<div className="mt-8 flex max-lg:justify-center max-sm:justify-start items-center gap-4 text-light resume-btn-cont relative">
+		<motion.div
+			transition={{ delay: 0.2 }}
+			initial={{ x: -100, opacity: 0 }}
+			whileInView={{ x: 0, opacity: 1 }}
+			className="mt-8 flex max-lg:justify-center max-sm:justify-start items-center gap-4 text-light resume-btn-cont relative"
+		>
 			<Link
 				href={Resume.driveLink}
 				aria-label="View My Resume"
@@ -66,9 +72,14 @@ export default function ResumeBtn() {
 				<ResumeIc />
 			</Link>
 
-			<a href={Resume.fileLink} download className="resume-download" aria-label="Download My Resume">
-				<IconDownload size="20"/>
+			<a
+				href={Resume.fileLink}
+				download
+				className="resume-download"
+				aria-label="Download My Resume"
+			>
+				<IconDownload size="20" />
 			</a>
-		</div>
+		</motion.div>
 	);
 }

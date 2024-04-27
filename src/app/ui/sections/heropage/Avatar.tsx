@@ -1,11 +1,32 @@
 import Image from "next/image";
 import "./style.css";
-
+import { motion } from "framer-motion";
 
 export default function Avatar() {
 	return (
-		<div className="avatar-cont blob-cont blob-anim-1">
-			<div className="absolute bottom-0 aspect-square w-[80%] inline-block">
+		<motion.div
+			className="avatar-cont blob-cont blob-anim-1"
+			initial={{
+				x: 100,
+				opacity: 0,
+			}}
+			whileInView={{
+				x: 0,
+				opacity: 1,
+			}}
+		>
+			<motion.div
+				transition={{ delay: 0.2, bounce: 0}}
+				initial={{
+					y: 100,
+					opacity: 0,
+				}}
+				whileInView={{
+					y: 0,
+					opacity: 1,
+				}}
+				className="absolute bottom-0 aspect-square w-[80%] inline-block"
+			>
 				<Image
 					src="/images/avatar.webp"
 					fill={true}
@@ -14,7 +35,7 @@ export default function Avatar() {
 					draggable={false}
 					priority={true}
 				/>
-			</div>
-		</div>
+			</motion.div>
+		</motion.div>
 	);
 }
