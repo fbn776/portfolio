@@ -76,7 +76,7 @@ export default function About() {
                         <motion.p transition={{type: "tween"}} variants={childVariant} initial="hidden"
                                   whileInView="show">
                             I am a passionate and dedicated developer and an aspiring software
-                            engineer with a strong interest in creating innovative and solving problems.
+                            engineer with a strong interest in innovations and solving problems.
                             I&apos;m experienced in web technologies, software development, and project management. I am
                             always looking for opportunities to expand my skills and
                             knowledge. <br/>I&apos;m experienced in working with

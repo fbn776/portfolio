@@ -7,6 +7,7 @@ export default function Socials() {
     return SocialLinks.map((item, index) => {
         return (
             <motion.div
+				key={index}
 				initial={{x: -50, opacity: 0}}
 				whileInView={{
 					x: 0,
@@ -18,7 +19,6 @@ export default function Socials() {
 				}}
 			>
 				<a
-                    key={index}
                     href={item.link}
                     aria-label={`View my ${item.name}`}
                     className="w-[80%] max-sm:w-full m-auto flex p-4 justify-between items-center gap-5 max-lg:gap-3 my-5 glass-bg rounded-lg shadow-lg"
