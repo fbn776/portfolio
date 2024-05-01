@@ -111,3 +111,12 @@ bun dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Misc
+
+- See [framer-motion branch](https://github.com/fbn776/portfolio/tree/feat--framer-motion) for the version with scroll animations.
+
+
+## License
+
+Feel free to use this as a template for your own portfolio.
