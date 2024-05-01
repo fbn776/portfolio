@@ -4,7 +4,7 @@ This is my personal portfolio website. Built using `Next.js 14` in `TypeScript`,
 
 View the deployed site [here](https://febinnelson.me).
 
-	This branch uses framermotion for the animations, which strruggles on mobile devices. So, this branch is not used in the production site.
+**This branch uses `framer motion` for the animations, which struggles on mobile devices. So, this branch is not used in the production build.**
 
 ## Screenshots
 
