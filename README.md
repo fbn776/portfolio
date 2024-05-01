@@ -1,9 +1,10 @@
 # Portfolio
 
-This is my personal portfolio website. Built using `Next.js 14` in `TypeScript`, styled with `Tailwind CSS`.
+This is my personal portfolio website. Built using `Next.js 14` in `TypeScript`, styled with `Tailwind CSS` and `Framer Motion`.
 
 View the deployed site [here](https://febinnelson.me).
 
+	This branch uses framermotion for the animations, which strruggles on mobile devices. So, this branch is not used in the production site.
 
 ## Screenshots
 
