@@ -27,7 +27,7 @@ export default function useCanvasBg(canvasRef: RefObject<HTMLCanvasElement>) {
 
 		if (!canvas) return;
 
-		let width = window.innerHeight,
+		let width = window.innerWidth,
 			height = window.innerHeight;
 
 		const ctx = canvas.getContext("2d");
