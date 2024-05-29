@@ -10,6 +10,14 @@ const FeaturedProjectsData: IProjects[] = [
 		github: "https://github.com/fbn776/UniMate",
 	},
 	{
+		title: "AssistScript",
+		description: "AssistScript is a custom built programming language built using typescript. It's inspired by Lisp and is a scripting language. Its a simple, yet not very useful language but fun nonetheless.",
+		screenShotSrc: "/projects/assistscript.webp",
+		technologies: ["language", "Interpreter", "Lisp", "Scripting"],
+		github: "https://github.com/fbn776/AssistScript",
+		website: "https://asrc-online.vercel.app/",
+	},
+	{
 		title: "Assistant",
 		description:
 			"The AssistScript Chatbot Assistant is an innovative web application designed to provide users with intuitive and efficient assistance using the specially crafted AssistScript language. As a versatile virtual assistant, it offers a wide range of functionalities tailored to meet users' needs, from retrieving information to performing tasks and facilitating communication.",
