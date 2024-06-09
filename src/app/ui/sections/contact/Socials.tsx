@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SocialLinks } from "../../../data/Links";
+import { SocialLinks } from "@data/Links";
 import { IconExternalLink } from "@tabler/icons-react";
 import { SocialIcon } from "../../components/SocialIcon";
 
@@ -12,7 +12,7 @@ export default function Socials() {
 				aria-label={`View my ${item.name}`}
 				className="w-[80%] max-sm:w-full m-auto flex p-4 justify-between items-center gap-5 max-lg:gap-3 my-5 glass-bg rounded-lg shadow-lg"
 			>
-				<div className="size-[60px] text-light p-2 lg:p-3 aspect-square max-sm:size-[40px] bg-primary rounded-full flex items-center justify-center">
+				<div className="w-[60px] text-light p-2 lg:p-3 aspect-square max-sm:h-full bg-primary rounded-full flex items-center justify-center">
 					{SocialIcon(item.name)}
 				</div>
 				<div className="w-full">
