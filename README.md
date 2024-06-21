@@ -119,4 +119,4 @@ bun dev
 
 ## License
 
-Feel free to use this as a template for your own portfolio.
+Feel free to use this as a template for your own portfolio🐥.
