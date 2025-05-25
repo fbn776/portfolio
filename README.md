@@ -2,7 +2,7 @@
 
 This is my personal portfolio website. Built using `Next.js 14` in `TypeScript`, styled with `Tailwind CSS`.
 
-View the deployed site [here](https://febinnelson.me).
+View the deployed site [here](https://fbn776.vercel.app/).
 
 
 ## Screenshots
