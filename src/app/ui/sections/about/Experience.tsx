@@ -1,6 +1,6 @@
 import ExperienceData from "@/app/data/about/ExperienceData";
 import Timeline from "../../components/timeline/Timeline";
-import ReadMore from "../../components/ReadMore";
+import ReadMore from "../../components/read-more";
 
 export default function Experience() {
 	return (

@@ -1,19 +1,63 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { textFont } from "@/app/ui/fonts";
 import Background from "./ui/background/Background";
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://fbn776.vercel.app"),
 	title: "Febin Nelson P",
 	description:
 		"Welcome to Febin's Portfolio. I'm a computer science student and a software developer. I love to build things that make a difference.",
+
 	applicationName: "Portfolio",
-	authors: {
-		name: "fbn776",
+
+	authors: [
+		{
+			name: "fbn776",
+			url: "https://fbn776.vercel.app",
+		},
+	],
+
+	keywords: [
+		"Febin",
+		"Febin Nelson P",
+		"Febin Nelson",
+		"fbn776",
+		"Portfolio",
+		"Computer Science",
+		"Software Development",
+	],
+
+	icons: {
+		apple: "/apple-touch-icon.png",
+		icon: [
+			{
+				url: "/favicon-32x32.png",
+				sizes: "32x32",
+				type: "image/png",
+			},
+			{
+				url: "/favicon-16x16.png",
+				sizes: "16x16",
+				type: "image/png",
+			},
+		],
+		other: [
+			{
+				rel: "mask-icon",
+				url: "/safari-pinned-tab.svg",
+				color: "#5bbad5",
+			},
+		],
 	},
-	keywords: ["Febin", "Febin Nelson P", "Febin Nelson", "fbn776", "Portfolio", "Computer Science", "Software Development"],
+
+	manifest: "/site.webmanifest",
 };
-``
+
+export const viewport: Viewport = {
+	themeColor: "#da532c",
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -21,29 +65,6 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<head>
-				<link
-					rel="apple-touch-icon"
-					sizes="180x180"
-					href="/apple-touch-icon.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="32x32"
-					href="/favicon-32x32.png"
-				/>
-				<link
-					rel="icon"
-					type="image/png"
-					sizes="16x16"
-					href="/favicon-16x16.png"
-				/>
-				<link rel="manifest" href="/site.webmanifest" />
-				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-				<meta name="msapplication-TileColor" content="#da532c" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			</head>
 			<body className={`${textFont.className} dark overflow-x-hidden`}>
 				<Background />
 				{children}

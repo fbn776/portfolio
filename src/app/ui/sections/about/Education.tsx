@@ -1,6 +1,6 @@
 import EducationData from "@/app/data/about/EducationData";
 import Timeline from "../../components/timeline/Timeline";
-import ReadMore from "../../components/ReadMore";
+import ReadMore from "../../components/read-more";
 
 export default function Education() {
 	return (

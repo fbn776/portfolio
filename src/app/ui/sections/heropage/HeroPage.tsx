@@ -1,10 +1,8 @@
-"use client";
-
 import {headerFont, textFont} from "@/app/ui/fonts";
 import Avatar from "./Avatar";
-import {TypeAnimation} from "react-type-animation";
 import "./style.css";
 import ResumeBtn from "./ResumeBtn";
+import TypeAnimations from "@/app/ui/components/type-animations";
 
 export default function HeroPage() {
     return (
@@ -25,26 +23,19 @@ export default function HeroPage() {
                         </span>
                     </div>
                     <br/>
-                    <TypeAnimation
-                        sequence={[
-                            ">",
-                            "> CS undergrad",
-                            1000,
-                            "> Student",
-                            1000,
-                            "> Developer",
-                            1000,
-                            "> Full Stack Developer",
-                            1000,
-                            "> Aspiring Engineer",
-                            2000,
-                        ]}
-                        aria-label="I'm a student, front end dev, web dev, full stack, aspiring engineer"
-                        speed={25}
-                        repeat={Infinity}
-                        className="text-3xl max-sm:text-lg max-sm:opacity-80 max-sm:mt-[-18px]"
-                        preRenderFirstString={true}
-                    />
+                    <TypeAnimations sequence={[
+                        ">",
+                        "> CS undergrad",
+                        1000,
+                        "> Student",
+                        1000,
+                        "> Developer",
+                        1000,
+                        "> Full Stack Developer",
+                        1000,
+                        "> Aspiring Engineer",
+                        2000,
+                    ]} airaLabel="Aspiring Engineer"/>
                 </div>
                 <Avatar/>
             </div>
@@ -52,6 +43,3 @@ export default function HeroPage() {
         </section>
     );
 }
-
-/*
- */

@@ -1,5 +1,5 @@
 import FeaturedProjectsData from "@/app/data/projects/FeaturedProjectsData";
-import Header from "../../components/Header";
+import Header from "../../components/header";
 import Link from "next/link";
 import ShowcaseBox from "../../components/showcase/ShowcaseBox";
 

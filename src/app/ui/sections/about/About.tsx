@@ -4,7 +4,7 @@ import {
 	IconBrandLinkedin,
 	IconBrandX,
 } from "@tabler/icons-react";
-import Header from "../../components/Header";
+import Header from "../../components/header";
 import { textFont } from "../../fonts";
 import Image from "next/image";
 import Education from "./Education";

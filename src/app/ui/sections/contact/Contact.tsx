@@ -1,5 +1,5 @@
 import "./style.css";
-import Header from "../../components/Header";
+import Header from "../../components/header";
 import Socials from "./Socials";
 import Connect from "./Connect";
 import { IconMail, IconPhone } from "@tabler/icons-react";

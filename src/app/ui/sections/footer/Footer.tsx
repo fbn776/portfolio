@@ -7,7 +7,7 @@ import {
 import "./style.css";
 import { headerFont } from "../../fonts";
 import { SocialLinks } from "@/app/data/Links";
-import { SocialIcon } from "../../components/SocialIcon";
+import { SocialIcon } from "../../components/social-icon";
 import Link from "next/link";
 
 export default function Footer() {

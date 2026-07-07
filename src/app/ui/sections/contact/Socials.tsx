@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SocialLinks } from "@data/Links";
 import { IconExternalLink } from "@tabler/icons-react";
-import { SocialIcon } from "../../components/SocialIcon";
+import { SocialIcon } from "../../components/social-icon";
 
 export default function Socials() {
 	return SocialLinks.map((item, index) => {
