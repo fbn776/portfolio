@@ -1,10 +1,10 @@
 import {headerFont, textFont} from "@/app/ui/fonts";
 import Avatar from "./Avatar";
 import "./style.css";
-import ResumeBtn from "./ResumeBtn";
+import ResumeBtn from "./resume-btn";
 import TypeAnimations from "@/app/ui/components/type-animations";
 
-export default function HeroPage() {
+export default function HeroSection() {
     return (
         <section id="home" className="main-section min-h-[100dvh]">
             <div
@@ -23,19 +23,26 @@ export default function HeroPage() {
                         </span>
                     </div>
                     <br/>
-                    <TypeAnimations sequence={[
-                        ">",
-                        "> CS undergrad",
-                        1000,
-                        "> Student",
-                        1000,
-                        "> Developer",
-                        1000,
-                        "> Full Stack Developer",
-                        1000,
-                        "> Aspiring Engineer",
-                        2000,
-                    ]} airaLabel="Aspiring Engineer"/>
+                    <TypeAnimations
+                        sequence={[
+                            ">",
+                            "> Backend Engineer",
+                            1500,
+                            "> Problem Solver",
+                            1500,
+                            "> Building Scalable Software",
+                            1500,
+                            "> Open Source Enthusiast",
+                            1500,
+                            "> Lifelong Learner",
+                            1500,
+                            "> Full-Stack Engineer",
+                            1500,
+                            "> Turning Ideas into Products",
+                            1500,
+                        ]}
+                        airaLabel="Full-Stack Engineer"
+                    />
                 </div>
                 <Avatar/>
             </div>

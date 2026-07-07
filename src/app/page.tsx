@@ -1,6 +1,6 @@
-import HeroPage from "@/app/ui/sections/heropage/HeroPage";
+import HeroSection from "@/app/ui/sections/heropage/hero-section";
 import Navbar from "./ui/components/navbar/Navbar";
-import About from "./ui/sections/about/About";
+import AboutSection from "./ui/sections/about/about-section";
 import Skills from "./ui/sections/skills/Skills";
 import Projects from "./ui/sections/projects/Projects";
 import Contact from "./ui/sections/contact/Contact";
@@ -10,8 +10,8 @@ export default function Home() {
 	return (
 		<main className="main overflow-y-scroll w-full h-full overflow-x-hidden">
 			<Navbar isHomePage={true}/>
-			<HeroPage />
-			<About />
+			<HeroSection />
+			<AboutSection />
 			<Skills />
 			<Projects />
 			<Contact />

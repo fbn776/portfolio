@@ -8,28 +8,51 @@ interface EducationDataModel {
 
 const ExperienceData: EducationDataModel[] = [
 	{
-		key: "Feb '24",
-		position: "Webmaster",
-		institute: "IEDC",
+		key: "May '26",
+		position: "Backend Product Intern",
+		institute: "Strollby, UST",
 		description:
-			"As the current Webmaster of the Innovation and Entrepreneurship Development Cell (IEDC) at Rajiv Gandhi Institute of Technology (RIT), I play a pivotal role in managing and enhancing the online presence of the organization. Responsibilities include website maintenance, content management, and implementing strategies to promote events and initiatives. Working closely with team members, I contribute to fostering an environment conducive to innovation and entrepreneurial growth within the institution. This role allows me to utilize my skills in web development and digital marketing to support the goals and objectives of IEDC RIT.",
-		skills: ["web development", "team management"],
+			"Developed and shipped backend features powering hotel data ingestion and search systems by integrating APIs from global hospitality providers. Built scalable data processing pipelines, including an LLM-assisted workflow that transformed over 16,000 unstructured room descriptions into structured inventory data. Designed and optimized core services for location search, autocomplete, and data enrichment while contributing to infrastructure improvements, testing, and code reviews.",
+		skills: [
+			"Python",
+			"Backend",
+			"FastApi",
+			"MongoDB",
+			"GraphQL",
+			"System design",
+		],
 	},
 	{
-		key: "Oct '23 - Jan '24",
-		position: "Web Developer",
-		institute: "EETI Foundation",
+		key: "Dec '24 - May '26",
+		position: "Full Stack Developer",
+		institute: "Zynact LLC",
 		description:
-			"As a Web Developer at EETI Foundation, I was responsible for designing, developing, and maintaining the organization's website. I worked closely with the team to create a user-friendly interface that effectively communicated the foundation's mission and goals. My role involved implementing new features, optimizing site performance, and ensuring that the website met the needs of its users. This experience allowed me to enhance my skills in web development, problem-solving, and project management.",
-		skills: ["frontend", "reactjs", "js", "tailwindcss"],
+			"Led development of Convogents, an AI-powered calling assistant for managing bookings and appointments using LLM-powered workflows and telephony systems. Designed a dynamic knowledge base for context-aware AI interactions, made key architectural decisions across backend and system design, and developed Padikkam, an e-learning platform supporting content delivery, quiz automation, and certificate generation.",
+		skills: [
+			"Backend",
+			"MongoDB",
+			"PostgreSQL",
+			"Nextjs",
+			"React",
+			"Nodejs",
+			"Typescript",
+			"AI"
+		],
 	},
 	{
-		key: "Aprl '23 - Sept '23",
-		position: "Web Developer",
-		institute: "TedX RIT",
+		key: "Oct '23 - Feb '24",
+		position: "Frontend Developer",
+		institute: "People + AI (Sunva AI)",
 		description:
-			"Me and my talented team, worked as web developers for TEDx GEC RIT. Together, we used React.js and Next.js to craft the official event website. This platform provided event details, updates, and an easy ticket purchase process, contributing to the event's online success",
-		skills: ["frontend", "nextjs", "typescript"],
+			"Contributed to Sunva AI, an AI-powered communication tool for the deaf community. Built an accessible frontend using Next.js, integrated backend APIs, implemented WebSocket-based real-time transcription, and contributed to frontend architecture and UI improvements for an open-source accessibility project.",
+		skills: [
+			"nextjs",
+			"react",
+			"typescript",
+			"websockets",
+			"frontend",
+			"accessibility",
+		],
 	},
 ];
 

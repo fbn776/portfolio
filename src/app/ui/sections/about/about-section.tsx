@@ -7,12 +7,12 @@ import {
 import Header from "../../components/header";
 import { textFont } from "../../fonts";
 import Image from "next/image";
-import Education from "./Education";
-import Experience from "./Experience";
+import Education from "./education";
+import Experience from "./experience";
 import Link from "next/link";
 import MyLinks from "@/app/data/Links";
 
-export default function About() {
+export default function AboutSection() {
 	return (
 		<section id="about" className="main-section">
 			<Header text="About" className="text-6xl" />
@@ -33,31 +33,32 @@ export default function About() {
 				<div className="flex flex-col justify-between text-dark dark:text-light">
 					<div className={`${textFont.className} text-dark dark:text-light`}>
 						<p>
-							Hello there! My name is{" "}
-							<span className="text-primary">Febin Nelson P</span>. I&apos;m
-							currently a second year student pursuing Bachelor of
-							Technology(BTech) in Computer Science and Engineering at Rajiv
-							Gandhi Institute of Technology (RIT) Kottayam.
+							Hello! I&#39;m <span className="text-primary">Febin Nelson P</span>, a
+							Software Engineer and Computer Science graduate from Rajiv Gandhi
+							Institute of Technology (RIT), Kottayam.
 							<br />
 							<br />
 						</p>
+
 						<p>
-							I am a passionate and dedicated developer and an aspiring software
-							engineer with a strong interest in creating innovative and solving problems.
-							I&apos;m experienced in web technologies, software development, and project management. I am
-							always looking for opportunities to expand my skills and
-							knowledge. <br />I&apos;m experienced in working with
-							various technologies and tools like{" "}
-							<span className="text-primary">
-								ReactJS, Node.js, Express.js, NextJS, MySQL, Git, and more.
-							</span>
+							I enjoy building reliable, scalable software with a focus on creating
+							products that solve real-world problems. My interests span backend
+							engineering, full-stack development, cloud technologies, and system
+							design. I value writing clean, maintainable code and continuously
+							learning better ways to build software.
 							<br />
 							<br />
 						</p>
-						<p className="max-sm:hidden">
-							I have worked on various projects and initiatives, and I have
-							excelled academically. I am always looking for opportunities to
-							learn and grow, and I am excited about what the future holds.
+
+						<p>
+							Over the years, I&#39;ve built and contributed to web applications,
+							self-hosted solutions, and developer tools using technologies such as{" "}
+							<span className="text-primary">
+			Go, TypeScript, React, Next.js, Node.js, Express.js, PostgreSQL,
+			MySQL, Docker, Git, and AWS.
+		</span>{" "}
+							I enjoy turning ideas into polished products and collaborating with
+							teams to deliver meaningful solutions.
 						</p>
 					</div>
 
@@ -89,12 +90,14 @@ export default function About() {
 			</div>
 			<br />
 
-			<Header text="Education" id="education" />
-			<Education />
-			<br />
 
 			<Header text="Experience" />
 			<Experience />
+			<br />
+			<br />
+
+			<Header text="Education" id="education" />
+			<Education />
 			<br />
 			<br />
 		</section>

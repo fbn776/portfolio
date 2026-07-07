@@ -6,7 +6,7 @@ export default function Experience() {
 	return (
 		<Timeline
 			source={ExperienceData}
-			elmMapper={(data, i) => {
+			elmMapper={(data) => {
 				return (
 					<>
 						<h1 className="text-xl mb-2 font-semibold">{data.position}</h1>
